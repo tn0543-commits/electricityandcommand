@@ -1,0 +1,3585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ELECTRICITY ⚡ Classroom Appliances &amp; Electrical Vocabulary</title>
+  <style>
+    /* =========================================================================
+       1. DESIGN TOKENS & GLOBAL RESET (100% OFFLINE, ZERO SCROLLING)
+       ========================================================================= */
+    :root {
+      --emerald-900: #064E3B;
+      --emerald-800: #065F46;
+      --emerald-700: #047857;
+      --emerald-600: #059669;
+      --emerald-500: #10B981;
+      --emerald-100: #D1FAE5;
+      --emerald-50:  #ECFDF5;
+
+      --yellow-500:  #EAB308;
+      --yellow-400:  #FACC15;
+      --yellow-300:  #FDE047;
+      --yellow-100:  #FEF9C3;
+
+      --charcoal-950: #0F172A;
+      --charcoal-900: #1E293B;
+      --charcoal-700: #334155;
+      --charcoal-500: #64748B;
+      --charcoal-300: #CBD5E1;
+      --charcoal-100: #F1F5F9;
+
+      --white:       #FFFFFF;
+      --danger:      #EF4444;
+      --danger-soft: #FEE2E2;
+
+      --font-main: 'Century Gothic', 'Tw Cen MT', 'Futura', 'AppleGothic', 'Microsoft JhengHei', 'PingFang TC', 'Noto Sans TC', sans-serif;
+      --font-zh:   'Microsoft JhengHei', 'PingFang TC', 'Noto Sans TC', 'Heiti TC', sans-serif;
+
+      --shadow-sm:   0 0.25em 0.6em rgba(15, 23, 42, 0.08);
+      --shadow-md:   0 0.55em 1.4em rgba(15, 23, 42, 0.12);
+      --shadow-lg:   0 1em 2.2em rgba(15, 23, 42, 0.18);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background-color: var(--charcoal-950);
+      font-family: var(--font-main);
+      color: var(--charcoal-900);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    /* =========================================================================
+       2. 16:9 WIDESCREEN SMARTBOARD STAGE (PROPORTIONAL 1920x1080 SCALING)
+       1em = 16px at 1920x1080 -> Stage is exactly 120em x 67.5em
+       ========================================================================= */
+    .stage {
+      width: min(100vw, 177.7778vh);
+      height: min(100vh, 56.25vw);
+      font-size: calc(min(100vw, 177.7778vh) / 120);
+      background: linear-gradient(155deg, #FFFFFF 0%, #F4FAF7 60%, #ECFDF5 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 3em rgba(0, 0, 0, 0.55);
+    }
+
+    /* Subtle decorative corner geometry */
+    .stage::before {
+      content: "";
+      position: absolute;
+      top: -14em;
+      right: -10em;
+      width: 34em;
+      height: 34em;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(250, 204, 21, 0.16) 0%, rgba(250, 204, 21, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .stage::after {
+      content: "";
+      position: absolute;
+      bottom: -14em;
+      left: -10em;
+      width: 36em;
+      height: 36em;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, rgba(16, 185, 129, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* =========================================================================
+       3. TOP HEADER BAR
+       ========================================================================= */
+    .top-bar {
+      height: 5.8em;
+      padding: 0 2.8em;
+      background: var(--charcoal-900);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 0.3em solid var(--yellow-400);
+      position: relative;
+      z-index: 10;
+      flex-shrink: 0;
+    }
+
+    .top-left {
+      display: flex;
+      align-items: center;
+      gap: 1.2em;
+      min-width: 0;
+    }
+
+    .brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45em;
+      background: var(--emerald-600);
+      color: var(--white);
+      padding: 0.45em 1.1em;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 1.25em;
+      letter-spacing: 0.06em;
+      box-shadow: 0 0.2em 0.6em rgba(5, 150, 105, 0.4);
+      flex-shrink: 0;
+    }
+
+    .brand-bolt {
+      color: var(--yellow-400);
+      font-size: 1.15em;
+    }
+
+    .slide-heading-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 0.9em;
+      min-width: 0;
+    }
+
+    .slide-title-top {
+      font-size: 1.9em;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      color: var(--white);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .slide-subtitle-top {
+      font-size: 1.25em;
+      font-weight: 600;
+      color: var(--yellow-300);
+      font-family: var(--font-zh);
+      white-space: nowrap;
+    }
+
+    .top-right {
+      display: flex;
+      align-items: center;
+      gap: 1.1em;
+      flex-shrink: 0;
+    }
+
+    .slide-counter {
+      background: rgba(255, 255, 255, 0.12);
+      border: 0.12em solid rgba(255, 255, 255, 0.22);
+      color: var(--white);
+      padding: 0.4em 1.1em;
+      border-radius: 999px;
+      font-size: 1.2em;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .sound-btn {
+      width: 2.8em;
+      height: 2.8em;
+      border-radius: 50%;
+      border: 0.12em solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      font-size: 1.2em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .sound-btn:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: scale(1.06);
+    }
+
+    /* =========================================================================
+       4. MAIN SLIDE CONTENT AREA
+       ========================================================================= */
+    .slide-viewport {
+      flex: 1;
+      min-height: 0;
+      position: relative;
+      z-index: 5;
+      padding: 1.8em 2.8em 1.5em;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      min-height: 0;
+      animation: slideFadeIn 0.28s ease-out;
+    }
+
+    .slide.active {
+      display: flex;
+    }
+
+    @keyframes slideFadeIn {
+      from { opacity: 0; transform: translateY(0.6em); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =========================================================================
+       5. BOTTOM NAVIGATION BAR (TOUCHSCREEN FRIENDLY)
+       ========================================================================= */
+    .bottom-bar {
+      height: 5.8em;
+      padding: 0 2.8em;
+      background: var(--white);
+      border-top: 0.16em solid var(--charcoal-100);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 10;
+      flex-shrink: 0;
+      box-shadow: 0 -0.3em 1.2em rgba(15, 23, 42, 0.05);
+    }
+
+    .nav-group {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+    }
+
+    .nav-btn {
+      height: 3.3em;
+      padding: 0 1.6em;
+      border-radius: 0.9em;
+      border: none;
+      font-family: var(--font-main);
+      font-size: 1.2em;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55em;
+      transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.14s ease, opacity 0.14s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-btn:active:not(:disabled) {
+      transform: scale(0.96);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .nav-btn-home {
+      background: var(--charcoal-900);
+      color: var(--white);
+    }
+    .nav-btn-home:hover:not(:disabled) { background: var(--charcoal-700); }
+
+    .nav-btn-back {
+      background: var(--charcoal-100);
+      color: var(--charcoal-900);
+      border: 0.12em solid var(--charcoal-300);
+    }
+    .nav-btn-back:hover:not(:disabled) { background: #E2E8F0; }
+
+    .nav-btn-reset {
+      background: var(--yellow-400);
+      color: var(--charcoal-900);
+    }
+    .nav-btn-reset:hover:not(:disabled) { background: var(--yellow-300); }
+
+    .nav-btn-next {
+      background: var(--emerald-600);
+      color: var(--white);
+    }
+    .nav-btn-next:hover:not(:disabled) { background: var(--emerald-700); }
+
+    .dot-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.55em;
+      padding: 0.5em 1em;
+      background: var(--charcoal-100);
+      border-radius: 999px;
+    }
+
+    .slide-dot {
+      width: 0.95em;
+      height: 0.95em;
+      border-radius: 999px;
+      border: none;
+      background: var(--charcoal-300);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .slide-dot:hover {
+      background: var(--emerald-500);
+      transform: scale(1.2);
+    }
+
+    .slide-dot.active {
+      width: 2.4em;
+      background: var(--emerald-600);
+    }
+
+    /* =========================================================================
+       6. SLIDE 1: WELCOME HERO LAYOUT
+       ========================================================================= */
+    .welcome-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1.02fr 1.15fr;
+      gap: 2.8em;
+      align-items: center;
+      min-height: 0;
+    }
+
+    .welcome-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.3em;
+      padding-left: 1em;
+    }
+
+    .welcome-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      background: var(--emerald-100);
+      color: var(--emerald-800);
+      padding: 0.5em 1.2em;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 1.2em;
+      letter-spacing: 0.08em;
+      border: 0.12em solid var(--emerald-500);
+    }
+
+    .welcome-title {
+      font-size: 5.4em;
+      font-weight: 900;
+      line-height: 1.02;
+      color: var(--charcoal-900);
+      letter-spacing: 0.02em;
+    }
+
+    .welcome-title span.bolt {
+      color: var(--yellow-500);
+      display: inline-block;
+      filter: drop-shadow(0 0.08em 0.14em rgba(234, 179, 8, 0.45));
+    }
+
+    .welcome-sub-en {
+      font-size: 2.25em;
+      font-weight: 700;
+      color: var(--emerald-700);
+      line-height: 1.25;
+    }
+
+    .welcome-sub-zh {
+      font-size: 2.1em;
+      font-weight: 700;
+      color: var(--charcoal-700);
+      font-family: var(--font-zh);
+      background: var(--yellow-100);
+      padding: 0.4em 1em;
+      border-radius: 0.6em;
+      border-left: 0.25em solid var(--yellow-400);
+    }
+
+    .welcome-meta {
+      display: flex;
+      gap: 1.2em;
+      margin-top: 0.2em;
+    }
+
+    .meta-chip {
+      background: var(--white);
+      border: 0.12em solid var(--charcoal-300);
+      border-radius: 0.8em;
+      padding: 0.55em 1.1em;
+      font-size: 1.15em;
+      font-weight: 700;
+      color: var(--charcoal-700);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .start-lesson-btn {
+      margin-top: 0.6em;
+      padding: 0.9em 2.4em;
+      border-radius: 1.1em;
+      border: none;
+      background: linear-gradient(135deg, var(--emerald-600) 0%, var(--emerald-700) 100%);
+      color: var(--white);
+      font-family: var(--font-main);
+      font-size: 2em;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7em;
+      box-shadow: 0 0.5em 1.3em rgba(5, 150, 105, 0.38);
+      transition: transform 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .start-lesson-btn:hover {
+      transform: translateY(-0.12em) scale(1.02);
+      box-shadow: 0 0.75em 1.7em rgba(5, 150, 105, 0.45);
+    }
+
+    .start-lesson-btn:active {
+      transform: scale(0.97);
+    }
+
+    .start-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.55em;
+      height: 1.55em;
+      border-radius: 50%;
+      background: var(--yellow-400);
+      color: var(--charcoal-900);
+      font-size: 0.85em;
+    }
+
+    .welcome-art-card {
+      height: 100%;
+      max-height: 49em;
+      background: var(--white);
+      border-radius: 2em;
+      padding: 1.4em;
+      border: 0.2em solid var(--emerald-100);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .welcome-art-card svg {
+      width: 100%;
+      height: 100%;
+      border-radius: 1.2em;
+    }
+
+    /* =========================================================================
+       7. FLIP TILE GRIDS (SLIDES 2-7) & INTERACTIVE 3D FLIP CARDS
+       ========================================================================= */
+    .slide-instruction-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2em;
+      flex-shrink: 0;
+    }
+
+    .section-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6em;
+      background: var(--emerald-50);
+      border: 0.12em solid var(--emerald-500);
+      color: var(--emerald-800);
+      padding: 0.45em 1.25em;
+      border-radius: 999px;
+      font-size: 1.25em;
+      font-weight: 800;
+    }
+
+    .flip-hint-badge {
+      font-size: 1.2em;
+      font-weight: 700;
+      color: var(--charcoal-700);
+      background: var(--yellow-100);
+      padding: 0.45em 1.2em;
+      border-radius: 999px;
+      border: 0.12em solid var(--yellow-400);
+    }
+
+    .tiles-grid-6 {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 1.8em;
+    }
+
+    .tiles-grid-4 {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 2.2em;
+      padding: 0 3em;
+    }
+
+    .flip-tile {
+      perspective: 1400px;
+      cursor: pointer;
+      min-height: 0;
+      min-width: 0;
+      outline: none;
+    }
+
+    .flip-tile-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.58s cubic-bezier(0.22, 0.68, 0.25, 1.02);
+      transform-style: preserve-3d;
+    }
+
+    .flip-tile.flipped .flip-tile-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 1.6em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.3em 1.5em;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .flip-front {
+      background: var(--white);
+      border: 0.18em solid #E2E8F0;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .flip-tile:hover .flip-front {
+      border-color: var(--emerald-500);
+      box-shadow: 0 0.7em 1.8em rgba(5, 150, 105, 0.18);
+    }
+
+    .tile-number {
+      position: absolute;
+      top: 0.75em;
+      left: 0.85em;
+      width: 2.1em;
+      height: 2.1em;
+      border-radius: 0.65em;
+      background: var(--emerald-50);
+      color: var(--emerald-700);
+      font-size: 1.15em;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0.1em solid var(--emerald-100);
+    }
+
+    .tile-art-box {
+      flex: 1;
+      width: 100%;
+      min-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.2em 0.8em;
+    }
+
+    .tile-art-box svg {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: 100%;
+      filter: drop-shadow(0 0.3em 0.45em rgba(15, 23, 42, 0.12));
+    }
+
+    .tile-en-front {
+      font-size: 2.15em;
+      font-weight: 900;
+      color: var(--charcoal-900);
+      text-align: center;
+      line-height: 1.15;
+      margin-top: 0.25em;
+    }
+
+    .tiles-grid-4 .tile-en-front {
+      font-size: 2.7em;
+    }
+
+    .tile-cta {
+      margin-top: 0.4em;
+      font-size: 0.95em;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: var(--emerald-700);
+      background: var(--emerald-50);
+      padding: 0.35em 1.1em;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+
+    /* BACK FACE */
+    .flip-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(145deg, var(--emerald-700) 0%, var(--emerald-900) 100%);
+      border: 0.22em solid var(--yellow-400);
+      color: var(--white);
+      justify-content: center;
+      gap: 0.9em;
+      position: relative;
+    }
+
+    .flip-back::before {
+      content: "⚡";
+      position: absolute;
+      top: -0.15em;
+      right: 0.25em;
+      font-size: 6.5em;
+      opacity: 0.09;
+      pointer-events: none;
+    }
+
+    .tile-zh-back {
+      font-family: var(--font-zh);
+      font-size: 3.6em;
+      font-weight: 900;
+      color: var(--yellow-300);
+      text-align: center;
+      line-height: 1.15;
+      text-shadow: 0 0.08em 0.22em rgba(0, 0, 0, 0.25);
+    }
+
+    .tiles-grid-4 .tile-zh-back {
+      font-size: 4.3em;
+    }
+
+    .tile-en-back {
+      font-size: 1.85em;
+      font-weight: 700;
+      color: var(--white);
+      text-align: center;
+      background: rgba(255, 255, 255, 0.13);
+      padding: 0.32em 1.1em;
+      border-radius: 999px;
+    }
+
+    .tile-back-hint {
+      position: absolute;
+      bottom: 0.9em;
+      font-size: 0.9em;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.72);
+      text-transform: uppercase;
+    }
+
+    /* =========================================================================
+       8. SLIDE 8: CLASSROOM COMMANDS (8 INTERACTIVE FLIP CARDS)
+       ========================================================================= */
+    .commands-grid {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 1.4em 2em;
+    }
+
+    .cmd-card {
+      perspective: 1200px;
+      cursor: pointer;
+      min-height: 0;
+    }
+
+    .cmd-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.52s cubic-bezier(0.22, 0.68, 0.25, 1.02);
+      transform-style: preserve-3d;
+    }
+
+    .cmd-card.flipped .cmd-card-inner {
+      transform: rotateX(180deg);
+    }
+
+    .cmd-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 1.3em;
+      padding: 0.9em 1.6em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2em;
+      box-shadow: var(--shadow-md);
+    }
+
+    .cmd-front {
+      background: var(--white);
+      border: 0.16em solid #E2E8F0;
+    }
+
+    .cmd-card:hover .cmd-front {
+      border-color: var(--emerald-500);
+    }
+
+    .cmd-left {
+      display: flex;
+      align-items: center;
+      gap: 1.1em;
+      min-width: 0;
+    }
+
+    .cmd-num {
+      width: 2.3em;
+      height: 2.3em;
+      border-radius: 0.7em;
+      background: var(--emerald-600);
+      color: var(--white);
+      font-size: 1.35em;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cmd-en {
+      font-size: 2.1em;
+      font-weight: 800;
+      color: var(--charcoal-900);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cmd-reveal-tag {
+      font-size: 0.95em;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--emerald-700);
+      background: var(--emerald-50);
+      padding: 0.4em 0.95em;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .cmd-back {
+      transform: rotateX(180deg);
+      background: linear-gradient(135deg, var(--charcoal-900) 0%, var(--emerald-900) 100%);
+      border: 0.2em solid var(--yellow-400);
+      color: var(--white);
+    }
+
+    .cmd-zh {
+      font-family: var(--font-zh);
+      font-size: 2.55em;
+      font-weight: 900;
+      color: var(--yellow-300);
+    }
+
+    .cmd-en-small {
+      font-size: 1.35em;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    /* =========================================================================
+       9. SHARED ACTIVITY HUD & BUTTONS (SLIDES 9-12)
+       ========================================================================= */
+    .activity-hud {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2em;
+      background: var(--white);
+      border: 0.14em solid #E2E8F0;
+      border-radius: 1.2em;
+      padding: 0.75em 1.5em;
+      margin-bottom: 1.2em;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
+
+    .hud-group {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+    }
+
+    .hud-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45em;
+      padding: 0.42em 1.05em;
+      border-radius: 0.8em;
+      font-size: 1.3em;
+      font-weight: 800;
+    }
+
+    .hud-score {
+      background: var(--emerald-100);
+      color: var(--emerald-800);
+    }
+
+    .hud-round {
+      background: var(--charcoal-100);
+      color: var(--charcoal-900);
+    }
+
+    .hud-timer {
+      background: var(--yellow-100);
+      color: var(--charcoal-900);
+      border: 0.12em solid var(--yellow-400);
+      min-width: 7.2em;
+      justify-content: center;
+    }
+
+    .hud-timer.urgent {
+      background: var(--danger-soft);
+      border-color: var(--danger);
+      color: #B91C1C;
+    }
+
+    .action-btn {
+      padding: 0.55em 1.45em;
+      border-radius: 0.85em;
+      border: none;
+      font-family: var(--font-main);
+      font-size: 1.25em;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      transition: transform 0.14s ease, filter 0.14s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .action-btn:active:not(:disabled) { transform: scale(0.96); }
+    .action-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .btn-emerald { background: var(--emerald-600); color: var(--white); }
+    .btn-emerald:hover:not(:disabled) { filter: brightness(1.06); }
+
+    .btn-yellow { background: var(--yellow-400); color: var(--charcoal-900); }
+    .btn-yellow:hover:not(:disabled) { filter: brightness(1.04); }
+
+    .btn-dark { background: var(--charcoal-900); color: var(--white); }
+    .btn-dark:hover:not(:disabled) { background: var(--charcoal-700); }
+
+    /* =========================================================================
+       10. SLIDE 9: WHAT'S MISSING?
+       ========================================================================= */
+    .missing-layout {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em;
+    }
+
+    .missing-grid {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 1.4em;
+    }
+
+    .missing-card {
+      background: var(--white);
+      border: 0.18em solid #E2E8F0;
+      border-radius: 1.4em;
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-sm);
+      min-height: 0;
+      transition: all 0.3s ease;
+    }
+
+    .missing-card svg {
+      max-height: 82%;
+      max-width: 85%;
+    }
+
+    .missing-card .missing-label {
+      margin-top: 0.35em;
+      font-size: 1.35em;
+      font-weight: 800;
+      color: var(--charcoal-900);
+    }
+
+    .missing-card.mystery {
+      background: linear-gradient(135deg, var(--yellow-100) 0%, var(--yellow-300) 100%);
+      border: 0.24em dashed var(--charcoal-900);
+      animation: pulseCard 1.5s infinite ease-in-out;
+    }
+
+    .missing-card.revealed {
+      background: var(--emerald-50);
+      border: 0.24em solid var(--emerald-500);
+      box-shadow: 0 0 1.8em rgba(16, 185, 129, 0.32);
+    }
+
+    @keyframes pulseCard {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    .mystery-q {
+      font-size: 5.2em;
+      font-weight: 900;
+      color: var(--charcoal-900);
+      line-height: 1;
+    }
+
+    .mystery-sub {
+      font-size: 1.4em;
+      font-weight: 900;
+      color: var(--emerald-800);
+      letter-spacing: 0.06em;
+      margin-top: 0.3em;
+    }
+
+    .missing-bottom-panel {
+      height: 7.4em;
+      flex-shrink: 0;
+      background: var(--white);
+      border: 0.16em solid #E2E8F0;
+      border-radius: 1.3em;
+      padding: 0.9em 1.6em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5em;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .missing-prompt {
+      font-size: 1.85em;
+      font-weight: 900;
+      color: var(--charcoal-900);
+      white-space: nowrap;
+    }
+
+    .missing-choices {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2em;
+      height: 100%;
+    }
+
+    .choice-btn {
+      border-radius: 1em;
+      border: 0.18em solid var(--charcoal-300);
+      background: var(--charcoal-100);
+      color: var(--charcoal-900);
+      font-family: var(--font-main);
+      font-size: 1.5em;
+      font-weight: 800;
+      cursor: pointer;
+      padding: 0.4em 0.9em;
+      transition: all 0.16s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .choice-btn:hover:not(:disabled) {
+      border-color: var(--emerald-600);
+      background: var(--emerald-50);
+      transform: translateY(-0.1em);
+    }
+
+    .choice-btn.correct {
+      background: var(--emerald-600);
+      border-color: var(--emerald-700);
+      color: var(--white);
+    }
+
+    .choice-btn.wrong {
+      background: var(--danger);
+      border-color: #B91C1C;
+      color: var(--white);
+    }
+
+    /* =========================================================================
+       11. SLIDE 10: MATCH THE APPLIANCE (DRAG-AND-DROP + TAP-TO-MATCH)
+       ========================================================================= */
+    .match-arena {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 1.48fr 1fr;
+      gap: 2em;
+    }
+
+    .match-pics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 1.15em;
+      min-height: 0;
+    }
+
+    .match-pic-card {
+      background: var(--white);
+      border: 0.2em solid #CBD5E1;
+      border-radius: 1.25em;
+      padding: 0.7em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      min-height: 0;
+      transition: all 0.18s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .match-pic-card svg {
+      max-width: 88%;
+      max-height: 70%;
+    }
+
+    .match-pic-slot {
+      width: 100%;
+      padding: 0.3em 0.4em;
+      border-radius: 0.65em;
+      background: var(--charcoal-100);
+      color: var(--charcoal-500);
+      font-size: 1.05em;
+      font-weight: 800;
+      text-align: center;
+      border: 0.12em dashed var(--charcoal-300);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .match-pic-card.selected,
+    .match-pic-card.drag-over {
+      border-color: var(--yellow-500);
+      background: var(--yellow-100);
+      transform: scale(1.03);
+      box-shadow: 0 0 0 0.2em rgba(250, 204, 21, 0.45);
+    }
+
+    .match-pic-card.matched {
+      border-color: var(--emerald-500);
+      background: var(--emerald-50);
+      cursor: default;
+    }
+
+    .match-pic-card.matched .match-pic-slot {
+      background: var(--emerald-600);
+      color: var(--white);
+      border-style: solid;
+      border-color: var(--emerald-600);
+    }
+
+    .match-words-panel {
+      background: var(--white);
+      border: 0.16em solid #E2E8F0;
+      border-radius: 1.4em;
+      padding: 1.1em;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .match-panel-title {
+      font-size: 1.3em;
+      font-weight: 900;
+      color: var(--emerald-800);
+      margin-bottom: 0.8em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .match-words-grid {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 0.9em;
+    }
+
+    .match-word-chip {
+      background: var(--charcoal-900);
+      color: var(--white);
+      border: 0.18em solid var(--charcoal-900);
+      border-radius: 1em;
+      padding: 0.5em 0.8em;
+      font-size: 1.3em;
+      font-weight: 800;
+      cursor: grab;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.16s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .match-word-chip:hover:not(.matched) {
+      background: var(--emerald-700);
+      border-color: var(--emerald-700);
+      transform: translateY(-0.1em);
+    }
+
+    .match-word-chip.selected {
+      background: var(--yellow-400);
+      color: var(--charcoal-900);
+      border-color: var(--charcoal-900);
+      transform: scale(1.04);
+    }
+
+    .match-word-chip.matched {
+      background: var(--emerald-100);
+      color: var(--emerald-800);
+      border-color: var(--emerald-500);
+      opacity: 0.55;
+      cursor: default;
+      text-decoration: line-through;
+    }
+
+    .shake {
+      animation: shakeAnim 0.36s ease;
+      border-color: var(--danger) !important;
+      background: var(--danger-soft) !important;
+      color: #991B1B !important;
+    }
+
+    @keyframes shakeAnim {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-0.4em); }
+      50% { transform: translateX(0.4em); }
+      75% { transform: translateX(-0.3em); }
+    }
+
+    /* =========================================================================
+       12. SLIDE 11: CLASSROOM COMMAND CHALLENGE
+       ========================================================================= */
+    .challenge-layout {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4em;
+    }
+
+    .command-banner {
+      background: linear-gradient(135deg, var(--charcoal-900) 0%, var(--emerald-900) 100%);
+      color: var(--white);
+      border-radius: 1.4em;
+      padding: 1.4em 2.2em;
+      border: 0.2em solid var(--yellow-400);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5em;
+      box-shadow: var(--shadow-md);
+      flex-shrink: 0;
+    }
+
+    .command-prompt-text {
+      font-size: 2.8em;
+      font-weight: 900;
+      color: var(--yellow-300);
+      letter-spacing: 0.02em;
+    }
+
+    .command-prompt-sub {
+      font-size: 1.2em;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 0.2em;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .challenge-choices {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2em;
+    }
+
+    .visual-choice-card {
+      background: var(--white);
+      border: 0.22em solid #CBD5E1;
+      border-radius: 1.6em;
+      padding: 1.4em;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 0;
+      transition: all 0.18s ease;
+      box-shadow: var(--shadow-md);
+    }
+
+    .visual-choice-card:hover:not(:disabled) {
+      border-color: var(--emerald-500);
+      transform: translateY(-0.25em);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .visual-choice-card svg {
+      max-width: 92%;
+      max-height: 80%;
+      flex: 1;
+    }
+
+    .visual-choice-tag {
+      margin-top: 0.6em;
+      font-size: 1.35em;
+      font-weight: 900;
+      color: var(--charcoal-700);
+      background: var(--charcoal-100);
+      padding: 0.35em 1.2em;
+      border-radius: 999px;
+    }
+
+    .visual-choice-card.correct {
+      border-color: var(--emerald-600);
+      background: var(--emerald-50);
+      box-shadow: 0 0 0 0.25em rgba(16, 185, 129, 0.35);
+    }
+
+    .visual-choice-card.wrong {
+      border-color: var(--danger);
+      background: var(--danger-soft);
+    }
+
+    .feedback-strip {
+      height: 4.8em;
+      flex-shrink: 0;
+      border-radius: 1.1em;
+      background: var(--charcoal-100);
+      border: 0.14em solid var(--charcoal-300);
+      padding: 0 1.6em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.45em;
+      font-weight: 800;
+      color: var(--charcoal-700);
+    }
+
+    .feedback-strip.success {
+      background: var(--emerald-100);
+      border-color: var(--emerald-500);
+      color: var(--emerald-900);
+    }
+
+    .feedback-strip.error {
+      background: var(--danger-soft);
+      border-color: var(--danger);
+      color: #991B1B;
+    }
+
+    /* =========================================================================
+       13. SLIDE 12: FINAL 10-QUESTION QUIZ
+       ========================================================================= */
+    .quiz-progress-track {
+      height: 0.85em;
+      background: var(--charcoal-100);
+      border-radius: 999px;
+      overflow: hidden;
+      flex: 1;
+      max-width: 30em;
+      border: 0.08em solid var(--charcoal-300);
+    }
+
+    .quiz-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--emerald-500), var(--yellow-400));
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    .quiz-stage {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 0.9fr 1.25fr;
+      gap: 2em;
+    }
+
+    .quiz-question-card {
+      background: var(--white);
+      border: 0.18em solid #E2E8F0;
+      border-radius: 1.6em;
+      padding: 1.8em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2em;
+      box-shadow: var(--shadow-md);
+      min-height: 0;
+    }
+
+    .quiz-cat-badge {
+      background: var(--yellow-100);
+      color: var(--charcoal-900);
+      border: 0.12em solid var(--yellow-400);
+      padding: 0.35em 1.1em;
+      border-radius: 999px;
+      font-size: 1.15em;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+    }
+
+    .quiz-visual-box {
+      width: 100%;
+      flex: 1;
+      min-height: 0;
+      max-height: 18em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quiz-visual-box svg {
+      max-height: 100%;
+      max-width: 90%;
+    }
+
+    .quiz-q-text {
+      font-size: 2.15em;
+      font-weight: 900;
+      color: var(--charcoal-900);
+      text-align: center;
+      line-height: 1.28;
+    }
+
+    .quiz-answers-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15em;
+      min-height: 0;
+    }
+
+    .quiz-options-grid {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 1fr);
+      gap: 1.05em;
+    }
+
+    .quiz-opt-btn {
+      background: var(--white);
+      border: 0.18em solid #CBD5E1;
+      border-radius: 1.15em;
+      padding: 0.6em 1.4em;
+      display: flex;
+      align-items: center;
+      gap: 1.1em;
+      font-family: var(--font-main);
+      font-size: 1.65em;
+      font-weight: 800;
+      color: var(--charcoal-900);
+      cursor: pointer;
+      transition: all 0.16s ease;
+      box-shadow: var(--shadow-sm);
+      text-align: left;
+    }
+
+    .quiz-opt-btn:hover:not(:disabled) {
+      border-color: var(--emerald-500);
+      background: var(--emerald-50);
+      transform: translateX(0.3em);
+    }
+
+    .quiz-opt-letter {
+      width: 2em;
+      height: 2em;
+      border-radius: 0.6em;
+      background: var(--charcoal-900);
+      color: var(--yellow-400);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .quiz-opt-btn.correct {
+      background: var(--emerald-600);
+      border-color: var(--emerald-700);
+      color: var(--white);
+    }
+    .quiz-opt-btn.correct .quiz-opt-letter {
+      background: var(--white);
+      color: var(--emerald-700);
+    }
+
+    .quiz-opt-btn.wrong {
+      background: var(--danger);
+      border-color: #B91C1C;
+      color: var(--white);
+    }
+    .quiz-opt-btn.wrong .quiz-opt-letter {
+      background: var(--white);
+      color: #B91C1C;
+    }
+
+    .quiz-summary-card {
+      flex: 1;
+      background: var(--white);
+      border: 0.22em solid var(--emerald-500);
+      border-radius: 2em;
+      padding: 2.5em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.4em;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .quiz-trophy {
+      font-size: 5.5em;
+      line-height: 1;
+    }
+
+    .quiz-final-score {
+      font-size: 4.5em;
+      font-weight: 900;
+      color: var(--emerald-700);
+    }
+
+    .quiz-final-msg {
+      font-size: 2.1em;
+      font-weight: 800;
+      color: var(--charcoal-900);
+    }
+
+    /* =========================================================================
+       14. SLIDE 13: LESSON WRAP-UP
+       ========================================================================= */
+    .wrapup-layout {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.6em;
+    }
+
+    .wrapup-header {
+      text-align: center;
+    }
+
+    .wrapup-title {
+      font-size: 3.1em;
+      font-weight: 900;
+      color: var(--charcoal-900);
+      letter-spacing: 0.03em;
+    }
+
+    .wrapup-sub {
+      font-size: 1.45em;
+      font-weight: 700;
+      color: var(--emerald-700);
+      margin-top: 0.2em;
+    }
+
+    .discussion-cards {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8em;
+    }
+
+    .discussion-card {
+      background: var(--white);
+      border: 0.18em solid #E2E8F0;
+      border-top: 0.55em solid var(--emerald-600);
+      border-radius: 1.5em;
+      padding: 2em 1.8em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.1em;
+      box-shadow: var(--shadow-md);
+    }
+
+    .discussion-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.2em;
+      height: 2.2em;
+      border-radius: 0.7em;
+      background: var(--yellow-400);
+      color: var(--charcoal-900);
+      font-size: 1.8em;
+      font-weight: 900;
+    }
+
+    .discussion-q {
+      font-size: 2.15em;
+      font-weight: 800;
+      color: var(--charcoal-900);
+      line-height: 1.3;
+    }
+
+    .discussion-zh {
+      font-family: var(--font-zh);
+      font-size: 1.35em;
+      font-weight: 700;
+      color: var(--charcoal-500);
+      border-top: 0.1em solid var(--charcoal-100);
+      padding-top: 0.7em;
+    }
+
+    .wrapup-banner {
+      background: linear-gradient(135deg, var(--emerald-700) 0%, var(--charcoal-900) 100%);
+      border: 0.22em solid var(--yellow-400);
+      border-radius: 1.6em;
+      padding: 1.5em 2.4em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2em;
+      box-shadow: var(--shadow-lg);
+      flex-shrink: 0;
+    }
+
+    .wrapup-final-msg {
+      font-size: 2.25em;
+      font-weight: 900;
+      color: var(--yellow-300);
+      line-height: 1.25;
+    }
+
+    .restart-btn {
+      padding: 0.85em 2em;
+      border-radius: 1em;
+      border: none;
+      background: var(--yellow-400);
+      color: var(--charcoal-900);
+      font-family: var(--font-main);
+      font-size: 1.55em;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: 0 0.4em 1.2em rgba(250, 204, 21, 0.35);
+      transition: transform 0.15s ease;
+    }
+
+    .restart-btn:hover { transform: scale(1.04); }
+    .restart-btn:active { transform: scale(0.97); }
+  </style>
+</head>
+<body>
+  <!-- =========================================================================
+       16:9 WIDESCREEN SMARTBOARD PRESENTATION STAGE
+       ========================================================================= -->
+  <div class="stage" id="stage">
+    <!-- PERSISTENT TOP HEADER -->
+    <header class="top-bar">
+      <div class="top-left">
+        <div class="brand-pill"><span class="brand-bolt">⚡</span> ELECTRICITY</div>
+        <div class="slide-heading-wrap">
+          <div class="slide-title-top" id="headerTitle">WELCOME</div>
+          <div class="slide-subtitle-top" id="headerSub">教室常見電器與電器相關詞彙</div>
+        </div>
+      </div>
+      <div class="top-right">
+        <div class="slide-counter" id="slideCounter">SLIDE 1 / 13</div>
+        <button class="sound-btn" id="soundToggle" title="Toggle Sound Effects" aria-label="Toggle Sound Effects">🔊</button>
+      </div>
+    </header>
+
+    <!-- MAIN SLIDE VIEWPORT (13 SLIDES, ZERO SCROLLING) -->
+    <main class="slide-viewport">
+
+      <!-- SLIDE 1: WELCOME -->
+      <section class="slide active" id="slide-1">
+        <div class="welcome-grid">
+          <div class="welcome-copy">
+            <div class="welcome-badge">⚡ INTERACTIVE SMARTBOARD LESSON</div>
+            <h1 class="welcome-title">ELECTRICITY <span class="bolt">⚡</span></h1>
+            <div class="welcome-sub-en">Classroom Appliances and Electrical Vocabulary</div>
+            <div class="welcome-sub-zh">教室常見電器與電器相關詞彙</div>
+            <div class="welcome-meta">
+              <div class="meta-chip">🃏 32 Vocabulary Flip Tiles</div>
+              <div class="meta-chip">🗣️ 8 Classroom Commands</div>
+              <div class="meta-chip">🎮 4 Interactive Games</div>
+            </div>
+            <button class="start-lesson-btn" id="startLessonBtn">
+              START LESSON
+              <span class="start-arrow">▶</span>
+            </button>
+          </div>
+          <div class="welcome-art-card" id="welcomeIllustration"></div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: CLASSROOM APPLIANCES – PART 1 -->
+      <section class="slide" id="slide-2">
+        <div class="slide-instruction-bar">
+          <div class="section-pill">🏫 CLASSROOM APPLIANCES — PART 1 (教室常見電器 1)</div>
+          <div class="flip-hint-badge">👆 Tap any tile to reveal Traditional Chinese</div>
+        </div>
+        <div class="tiles-grid-6" id="grid-slide-2"></div>
+      </section>
+
+      <!-- SLIDE 3: CLASSROOM APPLIANCES – PART 2 -->
+      <section class="slide" id="slide-3">
+        <div class="slide-instruction-bar">
+          <div class="section-pill">🏫 CLASSROOM APPLIANCES — PART 2 (教室常見電器 2)</div>
+          <div class="flip-hint-badge">👆 Tap any tile to reveal Traditional Chinese</div>
+        </div>
+        <div class="tiles-grid-6" id="grid-slide-3"></div>
+      </section>
+
+      <!-- SLIDE 4: OTHER COMMON ELECTRICAL APPLIANCES – PART 1 -->
+      <section class="slide" id="slide-4">
+        <div class="slide-instruction-bar">
+          <div class="section-pill">🔌 OTHER COMMON ELECTRICAL APPLIANCES — PART 1 (其他常見電器 1)</div>
+          <div class="flip-hint-badge">👆 Tap any tile to reveal Traditional Chinese</div>
+        </div>
+        <div class="tiles-grid-6" id="grid-slide-4"></div>
+      </section>
+
+      <!-- SLIDE 5: OTHER COMMON ELECTRICAL APPLIANCES – PART 2 -->
+      <section class="slide" id="slide-5">
+        <div class="slide-instruction-bar">
+          <div class="section-pill">🔌 OTHER COMMON ELECTRICAL APPLIANCES — PART 2 (其他常見電器 2)</div>
+          <div class="flip-hint-badge">👆 Tap any tile to reveal Traditional Chinese</div>
+        </div>
+        <div class="tiles-grid-6" id="grid-slide-5"></div>
+      </section>
+
+      <!-- SLIDE 6: IMPORTANT ACTION VERBS – PART 1 -->
+      <section class="slide" id="slide-6">
+        <div class="slide-instruction-bar">
+          <div class="section-pill">⚡ IMPORTANT ACTION VERBS — PART 1 (電器操作動詞 1)</div>
+          <div class="flip-hint-badge">👆 Tap any large tile to reveal Traditional Chinese</div>
+        </div>
+        <div class="tiles-grid-4" id="grid-slide-6"></div>
+      </section>
+
+      <!-- SLIDE 7: IMPORTANT ACTION VERBS – PART 2 -->
+      <section class="slide" id="slide-7">
+        <div class="slide-instruction-bar">
+          <div class="section-pill">⚡ IMPORTANT ACTION VERBS — PART 2 (電器操作動詞 2)</div>
+          <div class="flip-hint-badge">👆 Tap any large tile to reveal Traditional Chinese</div>
+        </div>
+        <div class="tiles-grid-4" id="grid-slide-7"></div>
+      </section>
+
+      <!-- SLIDE 8: CLASSROOM COMMANDS -->
+      <section class="slide" id="slide-8">
+        <div class="slide-instruction-bar">
+          <div class="section-pill">🗣️ LISTEN AND FOLLOW THE INSTRUCTIONS! (教室指令)</div>
+          <div class="flip-hint-badge">👆 Tap a sentence card to reveal its Chinese translation</div>
+        </div>
+        <div class="commands-grid" id="grid-slide-8"></div>
+      </section>
+
+      <!-- SLIDE 9: WHAT'S MISSING? -->
+      <section class="slide" id="slide-9">
+        <div class="activity-hud">
+          <div class="hud-group">
+            <div class="hud-badge hud-round" id="wmRound">ROUND 1 / 5</div>
+            <div class="hud-badge hud-score" id="wmScore">SCORE: 0 / 5</div>
+            <div class="hud-badge hud-timer" id="wmTimer">⏱ 10s</div>
+          </div>
+          <div class="hud-group">
+            <button class="action-btn btn-emerald" id="wmStartTimerBtn">▶ START 10s</button>
+            <button class="action-btn btn-yellow" id="wmHideBtn">👁️ HIDE ONE</button>
+            <button class="action-btn btn-dark" id="wmNextRoundBtn" style="display:none;">NEXT ROUND ▶</button>
+            <button class="action-btn btn-dark" id="wmResetBtn">↻ RESTART</button>
+          </div>
+        </div>
+        <div class="missing-layout">
+          <div class="missing-grid" id="wmGrid"></div>
+          <div class="missing-bottom-panel">
+            <div class="missing-prompt" id="wmPrompt">MEMORIZE THE 6 APPLIANCES!</div>
+            <div class="missing-choices" id="wmChoices"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: MATCH THE APPLIANCE -->
+      <section class="slide" id="slide-10">
+        <div class="activity-hud">
+          <div class="hud-group">
+            <div class="hud-badge hud-score" id="matchScore">SCORE: 0 / 8</div>
+            <div class="hud-badge hud-round" id="matchStatus">Drag a word OR tap picture &amp; word to match!</div>
+          </div>
+          <div class="hud-group">
+            <button class="action-btn btn-yellow" id="matchResetBtn">↻ RESET GAME</button>
+          </div>
+        </div>
+        <div class="match-arena">
+          <div class="match-pics-grid" id="matchPicsGrid"></div>
+          <div class="match-words-panel">
+            <div class="match-panel-title">
+              <span>ENGLISH VOCABULARY</span>
+              <span style="font-size:0.85em; color:var(--charcoal-500);">TAP OR DRAG</span>
+            </div>
+            <div class="match-words-grid" id="matchWordsGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: CLASSROOM COMMAND CHALLENGE -->
+      <section class="slide" id="slide-11">
+        <div class="activity-hud">
+          <div class="hud-group">
+            <div class="hud-badge hud-round" id="ccProgress">QUESTION 1 / 8</div>
+            <div class="hud-badge hud-score" id="ccScore">SCORE: 0 / 8</div>
+          </div>
+          <div class="hud-group">
+            <button class="action-btn btn-emerald" id="ccNextBtn" style="display:none;">NEXT QUESTION ▶</button>
+            <button class="action-btn btn-dark" id="ccResetBtn">↻ RESTART</button>
+          </div>
+        </div>
+        <div class="challenge-layout">
+          <div class="command-banner">
+            <div>
+              <div class="command-prompt-sub">LISTEN &amp; CHOOSE THE CORRECT ACTION</div>
+              <div class="command-prompt-text" id="ccCommandText">"Please turn off the lights."</div>
+            </div>
+            <div style="font-size:3.2em;">🗣️⚡</div>
+          </div>
+          <div class="challenge-choices" id="ccChoices"></div>
+          <div class="feedback-strip" id="ccFeedback">
+            <span>👆 Tap the picture that matches the classroom command!</span>
+            <span></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: FINAL QUIZ -->
+      <section class="slide" id="slide-12">
+        <div class="activity-hud">
+          <div class="hud-group" style="flex:1;">
+            <div class="hud-badge hud-round" id="quizProgress">QUESTION 1 / 10</div>
+            <div class="quiz-progress-track">
+              <div class="quiz-progress-fill" id="quizProgressBar" style="width:10%;"></div>
+            </div>
+          </div>
+          <div class="hud-group">
+            <div class="hud-badge hud-score" id="quizScore">SCORE: 0 / 10</div>
+            <button class="action-btn btn-yellow" id="quizRetakeTopBtn">↻ RETAKE QUIZ</button>
+          </div>
+        </div>
+        <div class="quiz-stage" id="quizStage"></div>
+      </section>
+
+      <!-- SLIDE 13: LESSON WRAP-UP -->
+      <section class="slide" id="slide-13">
+        <div class="wrapup-layout">
+          <div class="wrapup-header">
+            <h2 class="wrapup-title">WHAT HAVE WE LEARNED TODAY?</h2>
+            <div class="wrapup-sub">Pair &amp; Share — Class Discussion Questions (課堂討論與回顧)</div>
+          </div>
+          <div class="discussion-cards">
+            <div class="discussion-card">
+              <div class="discussion-num">1</div>
+              <div class="discussion-q">What electrical appliances do you use every day?</div>
+              <div class="discussion-zh">你每天都會使用哪些電器呢？</div>
+            </div>
+            <div class="discussion-card">
+              <div class="discussion-num">2</div>
+              <div class="discussion-q">What is your favorite classroom appliance?</div>
+              <div class="discussion-zh">你最喜歡教室裡的哪一樣電器？</div>
+            </div>
+            <div class="discussion-card">
+              <div class="discussion-num">3</div>
+              <div class="discussion-q">Can you give an instruction using "Turn on" or "Turn off"?</div>
+              <div class="discussion-zh">你能用「Turn on」或「Turn off」說出一個指令嗎？</div>
+            </div>
+          </div>
+          <div class="wrapup-banner">
+            <div class="wrapup-final-msg">Great job, everyone! Stay safe and use electricity wisely! ⚡</div>
+            <button class="restart-btn" id="restartLessonBtn">↻ RESTART LESSON</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- PERSISTENT BOTTOM NAVIGATION BAR -->
+    <footer class="bottom-bar">
+      <div class="nav-group">
+        <button class="nav-btn nav-btn-home" id="btnHome">🏠 HOME</button>
+        <button class="nav-btn nav-btn-back" id="btnBack">◀ BACK</button>
+      </div>
+
+      <div class="dot-nav" id="dotNav" aria-label="Slide Navigation"></div>
+
+      <div class="nav-group">
+        <button class="nav-btn nav-btn-reset" id="btnResetTiles">↻ RESET TILES</button>
+        <button class="nav-btn nav-btn-next" id="btnNext">NEXT ▶</button>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    /* =========================================================================
+       1. SOUND SYNTHESIZER (100% OFFLINE WEB AUDIO API, ZERO EXTERNAL FILES)
+       ========================================================================= */
+    const SoundFX = (() => {
+      let ctx = null;
+      let enabled = true;
+
+      function getCtx() {
+        try {
+          if (!ctx) {
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (AudioCtx) ctx = new AudioCtx();
+          }
+          if (ctx && ctx.state === 'suspended') ctx.resume();
+          return ctx;
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function playTone(freq, duration, type = 'sine', gainVal = 0.08, delay = 0) {
+        if (!enabled) return;
+        const c = getCtx();
+        if (!c) return;
+        try {
+          const osc = c.createOscillator();
+          const gain = c.createGain();
+          osc.type = type;
+          osc.frequency.setValueAtTime(freq, c.currentTime + delay);
+          gain.gain.setValueAtTime(0.001, c.currentTime + delay);
+          gain.gain.exponentialRampToValueAtTime(gainVal, c.currentTime + delay + 0.015);
+          gain.gain.exponentialRampToValueAtTime(0.001, c.currentTime + delay + duration);
+          osc.connect(gain);
+          gain.connect(c.destination);
+          osc.start(c.currentTime + delay);
+          osc.stop(c.currentTime + delay + duration + 0.02);
+        } catch (e) {}
+      }
+
+      return {
+        toggle() {
+          enabled = !enabled;
+          return enabled;
+        },
+        flip() {
+          playTone(460, 0.09, 'triangle', 0.07, 0);
+          playTone(620, 0.08, 'sine', 0.05, 0.04);
+        },
+        click() {
+          playTone(520, 0.06, 'sine', 0.05, 0);
+        },
+        correct() {
+          playTone(523.25, 0.13, 'triangle', 0.09, 0);
+          playTone(659.25, 0.14, 'triangle', 0.09, 0.09);
+          playTone(783.99, 0.22, 'triangle', 0.09, 0.18);
+        },
+        wrong() {
+          playTone(230, 0.16, 'sawtooth', 0.06, 0);
+          playTone(185, 0.22, 'sawtooth', 0.06, 0.12);
+        },
+        tick() {
+          playTone(880, 0.04, 'sine', 0.04, 0);
+        }
+      };
+    })();
+
+    /* =========================================================================
+       2. OFFLINE VECTOR ARTWORK LIBRARY (24 APPLIANCES + 8 ACTIONS + CLASSROOM)
+       ========================================================================= */
+    const SVGS = {
+      // --- SLIDE 1: FULL CLASSROOM SCENE ---
+      classroomScene: `
+        <svg viewBox="0 0 800 540" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#F8FAFC"/>
+              <stop offset="100%" stop-color="#E2F4EC"/>
+            </linearGradient>
+            <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#E2E8F0"/>
+              <stop offset="100%" stop-color="#CBD5E1"/>
+            </linearGradient>
+            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#BAE6FD"/>
+              <stop offset="100%" stop-color="#FEF9C3"/>
+            </linearGradient>
+            <linearGradient id="screenGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#065F46"/>
+              <stop offset="100%" stop-color="#0F172A"/>
+            </linearGradient>
+            <radialGradient id="lampGlow" cx="50%" cy="20%" r="70%">
+              <stop offset="0%" stop-color="#FDE047" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#FDE047" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <!-- Room Background -->
+          <rect width="800" height="410" fill="url(#wallGrad)"/>
+          <polygon points="0,410 800,410 800,540 0,540" fill="url(#floorGrad)"/>
+          <line x1="0" y1="410" x2="800" y2="410" stroke="#94A3B8" stroke-width="3"/>
+
+          <!-- Ceiling Lights + Glow -->
+          <ellipse cx="220" cy="70" rx="135" ry="60" fill="url(#lampGlow)"/>
+          <ellipse cx="580" cy="70" rx="135" ry="60" fill="url(#lampGlow)"/>
+          <rect x="145" y="22" width="150" height="16" rx="8" fill="#1E293B"/>
+          <rect x="155" y="34" width="130" height="8" rx="4" fill="#FEF08A"/>
+          <rect x="505" y="22" width="150" height="16" rx="8" fill="#1E293B"/>
+          <rect x="515" y="34" width="130" height="8" rx="4" fill="#FEF08A"/>
+
+          <!-- Ceiling Mounted Projector -->
+          <rect x="394" y="0" width="12" height="32" fill="#475569"/>
+          <rect x="355" y="30" width="90" height="32" rx="8" fill="#FFFFFF" stroke="#334155" stroke-width="2.5"/>
+          <circle cx="422" cy="46" r="10" fill="#1E293B"/>
+          <circle cx="422" cy="46" r="5" fill="#38BDF8"/>
+          <rect x="366" y="41" width="34" height="10" rx="3" fill="#CBD5E1"/>
+
+          <!-- Wall Air Conditioner (Top Right) -->
+          <rect x="595" y="68" width="175" height="58" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2.5"/>
+          <rect x="612" y="106" width="140" height="12" rx="5" fill="#1E293B"/>
+          <rect x="720" y="80" width="34" height="16" rx="4" fill="#0F172A"/>
+          <text x="737" y="92" font-family="monospace" font-size="11" font-weight="bold" fill="#34D399" text-anchor="middle">26°C</text>
+          <path d="M635 128 Q630 144 640 156 M680 128 Q675 144 685 156 M725 128 Q720 144 730 156" stroke="#38BDF8" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8"/>
+
+          <!-- Window with Motorized Curtains (Left) -->
+          <rect x="26" y="110" width="136" height="185" rx="8" fill="url(#skyGrad)" stroke="#334155" stroke-width="4"/>
+          <line x1="94" y1="110" x2="94" y2="295" stroke="#FFFFFF" stroke-width="4"/>
+          <line x1="26" y1="202" x2="162" y2="202" stroke="#FFFFFF" stroke-width="4"/>
+          <rect x="18" y="100" width="152" height="11" rx="5" fill="#1E293B"/>
+          <rect x="24" y="110" width="32" height="190" rx="4" fill="#10B981" opacity="0.9"/>
+          <rect x="132" y="110" width="32" height="190" rx="4" fill="#10B981" opacity="0.9"/>
+
+          <!-- Wall Digital Clock -->
+          <rect x="200" y="80" width="110" height="44" rx="8" fill="#1E293B" stroke="#475569" stroke-width="2.5"/>
+          <text x="255" y="110" font-family="monospace" font-size="24" font-weight="bold" fill="#FACC15" text-anchor="middle">09:30</text>
+
+          <!-- Interactive Whiteboard (Center) -->
+          <rect x="198" y="142" width="376" height="205" rx="12" fill="#1E293B" stroke="#0F172A" stroke-width="4"/>
+          <rect x="212" y="156" width="348" height="168" rx="6" fill="url(#screenGrad)"/>
+          <text x="386" y="218" font-family="Century Gothic, sans-serif" font-size="30" font-weight="900" fill="#FDE047" text-anchor="middle">ELECTRICITY ⚡</text>
+          <text x="386" y="254" font-family="Microsoft JhengHei, sans-serif" font-size="20" font-weight="700" fill="#D1FAE5" text-anchor="middle">教室常見電器</text>
+          <!-- Mini icons on smartboard -->
+          <rect x="262" y="274" width="66" height="32" rx="8" fill="#10B981" opacity="0.35"/>
+          <rect x="353" y="274" width="66" height="32" rx="8" fill="#FACC15" opacity="0.35"/>
+          <rect x="444" y="274" width="66" height="32" rx="8" fill="#38BDF8" opacity="0.35"/>
+          <rect x="295" y="344" width="180" height="10" rx="4" fill="#64748B"/>
+
+          <!-- Wall Speakers -->
+          <rect x="168" y="152" width="22" height="46" rx="5" fill="#1E293B"/>
+          <circle cx="179" cy="166" r="5" fill="#64748B"/>
+          <circle cx="179" cy="184" r="7" fill="#475569"/>
+          <rect x="582" y="152" width="22" height="46" rx="5" fill="#1E293B"/>
+          <circle cx="593" cy="166" r="5" fill="#64748B"/>
+          <circle cx="593" cy="184" r="7" fill="#475569"/>
+
+          <!-- Water Dispenser (Right Corner) -->
+          <rect x="676" y="218" width="90" height="200" rx="10" fill="#FFFFFF" stroke="#334155" stroke-width="2.5"/>
+          <rect x="688" y="232" width="66" height="24" rx="4" fill="#1E293B"/>
+          <circle cx="705" cy="244" r="4" fill="#EF4444"/>
+          <circle cx="721" cy="244" r="4" fill="#10B981"/>
+          <circle cx="737" cy="244" r="4" fill="#38BDF8"/>
+          <rect x="692" y="268" width="58" height="58" rx="6" fill="#E2E8F0"/>
+          <rect x="704" y="272" width="8" height="14" rx="2" fill="#EF4444"/>
+          <rect x="730" y="272" width="8" height="14" rx="2" fill="#3B82F6"/>
+          <rect x="688" y="338" width="66" height="66" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+
+          <!-- Wall Power Outlet & Switch -->
+          <rect x="624" y="272" width="32" height="48" rx="5" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/>
+          <rect x="633" y="282" width="14" height="11" rx="2" fill="#CBD5E1"/>
+          <rect x="633" y="299" width="14" height="11" rx="2" fill="#CBD5E1"/>
+
+          <!-- Electronic Teacher's Desk + Computer (Front Center-Right) -->
+          <rect x="448" y="365" width="166" height="122" rx="10" fill="#1E293B" stroke="#0F172A" stroke-width="3"/>
+          <rect x="462" y="382" width="138" height="90" rx="6" fill="#334155"/>
+          <rect x="470" y="352" width="122" height="18" rx="5" fill="#059669"/>
+          <!-- Desktop Monitor on Desk -->
+          <rect x="488" y="302" width="76" height="48" rx="6" fill="#0F172A" stroke="#64748B" stroke-width="2"/>
+          <rect x="494" y="308" width="64" height="36" rx="3" fill="#38BDF8"/>
+          <rect x="520" y="350" width="12" height="10" fill="#475569"/>
+
+          <!-- Standing Electric Fan (Front Left) -->
+          <ellipse cx="118" cy="482" rx="44" ry="12" fill="#1E293B"/>
+          <rect x="112" y="388" width="12" height="92" rx="5" fill="#475569"/>
+          <circle cx="118" cy="346" r="48" fill="#FFFFFF" stroke="#1E293B" stroke-width="4"/>
+          <circle cx="118" cy="346" r="40" fill="none" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="5,4"/>
+          <path d="M118 346 C118 312 142 316 138 336 C134 344 126 346 118 346 Z" fill="#10B981"/>
+          <path d="M118 346 C150 356 138 378 122 368 C116 364 116 354 118 346 Z" fill="#10B981"/>
+          <path d="M118 346 C86 356 90 326 106 330 C112 332 115 340 118 346 Z" fill="#10B981"/>
+          <circle cx="118" cy="346" r="10" fill="#FACC15" stroke="#1E293B" stroke-width="2"/>
+
+          <!-- Air Purifier (Mid Left) -->
+          <rect x="208" y="382" width="66" height="104" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="2.5"/>
+          <circle cx="241" cy="436" r="20" fill="#E2E8F0" stroke="#94A3B8" stroke-width="2"/>
+          <circle cx="241" cy="402" r="8" fill="#10B981"/>
+          <circle cx="241" cy="402" r="4" fill="#D1FAE5"/>
+        </svg>
+      `,
+
+      // --- 24 APPLIANCE ILLUSTRATIONS (VIEWBOX 0 0 220 170) ---
+      fan: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="110" cy="156" rx="46" ry="9" fill="#1E293B"/>
+        <rect x="92" y="147" width="36" height="10" rx="5" fill="#334155"/>
+        <circle cx="101" cy="152" r="3" fill="#FACC15"/>
+        <circle cx="110" cy="152" r="3" fill="#10B981"/>
+        <circle cx="119" cy="152" r="3" fill="#94A3B8"/>
+        <rect x="104" y="102" width="12" height="48" rx="5" fill="#64748B"/>
+        <circle cx="110" cy="64" r="54" fill="#F8FAFC" stroke="#1E293B" stroke-width="4.5"/>
+        <circle cx="110" cy="64" r="45" fill="none" stroke="#CBD5E1" stroke-width="2"/>
+        <circle cx="110" cy="64" r="32" fill="none" stroke="#CBD5E1" stroke-width="1.5"/>
+        <path d="M110 64 C104 26 142 22 142 46 C142 58 125 64 110 64 Z" fill="#10B981"/>
+        <path d="M110 64 C146 72 138 108 116 98 C108 94 108 78 110 64 Z" fill="#059669"/>
+        <path d="M110 64 C74 80 68 42 90 40 C100 39 106 52 110 64 Z" fill="#34D399"/>
+        <circle cx="110" cy="64" r="13" fill="#1E293B"/>
+        <circle cx="110" cy="64" r="7" fill="#FACC15"/>
+      </svg>`,
+
+      light: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="bulbGlow" cx="50%" cy="45%" r="52%">
+            <stop offset="0%" stop-color="#FEF08A"/>
+            <stop offset="65%" stop-color="#FACC15" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#FACC15" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="110" cy="76" r="72" fill="url(#bulbGlow)"/>
+        <path d="M110 14 L110 26 M158 30 L149 39 M174 74 L161 74 M62 30 L71 39 M46 74 L59 74" stroke="#EAB308" stroke-width="4.5" stroke-linecap="round"/>
+        <path d="M110 30 C82 30 66 50 66 74 C66 92 78 103 86 116 L134 116 C142 103 154 92 154 74 C154 50 138 30 110 30 Z" fill="#FEF08A" stroke="#CA8A04" stroke-width="4"/>
+        <path d="M97 114 L97 82 C97 74 103 70 110 76 C117 70 123 74 123 82 L123 114" fill="none" stroke="#B45309" stroke-width="3.5" stroke-linecap="round"/>
+        <rect x="88" y="116" width="44" height="12" rx="4" fill="#475569"/>
+        <rect x="91" y="129" width="38" height="11" rx="4" fill="#334155"/>
+        <path d="M97 140 L123 140 L118 152 L102 152 Z" fill="#1E293B"/>
+      </svg>`,
+
+      ac: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="18" y="28" width="184" height="74" rx="14" fill="#FFFFFF" stroke="#1E293B" stroke-width="4"/>
+        <line x1="20" y1="78" x2="200" y2="78" stroke="#CBD5E1" stroke-width="2.5"/>
+        <rect x="34" y="84" width="152" height="12" rx="5" fill="#1E293B"/>
+        <rect x="44" y="88" width="132" height="4" rx="2" fill="#64748B"/>
+        <rect x="142" y="42" width="44" height="22" rx="5" fill="#0F172A"/>
+        <text x="164" y="57" font-family="monospace" font-size="13" font-weight="bold" fill="#34D399" text-anchor="middle">25°C</text>
+        <circle cx="126" cy="53" r="4.5" fill="#10B981"/>
+        <path d="M56 112 Q48 130 62 146" stroke="#38BDF8" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+        <path d="M92 112 Q84 134 98 152" stroke="#0EA5E9" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+        <path d="M128 112 Q120 134 134 152" stroke="#0EA5E9" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+        <path d="M164 112 Q156 130 170 146" stroke="#38BDF8" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+      </svg>`,
+
+      projector: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="103" y="8" width="14" height="36" rx="4" fill="#475569"/>
+        <rect x="82" y="6" width="56" height="8" rx="4" fill="#1E293B"/>
+        <polygon points="154,68 214,34 214,132 154,102" fill="#FEF08A" opacity="0.55"/>
+        <rect x="26" y="44" width="146" height="68" rx="14" fill="#FFFFFF" stroke="#1E293B" stroke-width="4"/>
+        <rect x="40" y="60" width="48" height="34" rx="5" fill="#E2E8F0"/>
+        <line x1="48" y1="68" x2="80" y2="68" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+        <line x1="48" y1="77" x2="80" y2="77" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+        <line x1="48" y1="86" x2="80" y2="86" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="134" cy="78" r="24" fill="#1E293B" stroke="#475569" stroke-width="4"/>
+        <circle cx="134" cy="78" r="14" fill="#0EA5E9"/>
+        <circle cx="129" cy="73" r="4.5" fill="#FFFFFF" opacity="0.85"/>
+        <circle cx="98" cy="58" r="4" fill="#10B981"/>
+        <rect x="44" y="112" width="18" height="8" rx="3" fill="#334155"/>
+        <rect x="136" y="112" width="18" height="8" rx="3" fill="#334155"/>
+      </svg>`,
+
+      computer: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="34" y="16" width="152" height="96" rx="10" fill="#1E293B" stroke="#0F172A" stroke-width="3.5"/>
+        <rect x="44" y="26" width="132" height="74" rx="4" fill="#0EA5E9"/>
+        <rect x="54" y="36" width="52" height="36" rx="4" fill="#FFFFFF" opacity="0.9"/>
+        <rect x="114" y="36" width="52" height="16" rx="4" fill="#FACC15"/>
+        <rect x="114" y="58" width="52" height="32" rx="4" fill="#10B981"/>
+        <rect x="98" y="112" width="24" height="18" fill="#475569"/>
+        <rect x="74" y="128" width="72" height="8" rx="4" fill="#1E293B"/>
+        <rect x="30" y="144" width="118" height="16" rx="5" fill="#334155"/>
+        <rect x="38" y="149" width="102" height="6" rx="2" fill="#CBD5E1"/>
+        <rect x="160" y="138" width="26" height="22" rx="10" fill="#1E293B"/>
+        <line x1="173" y1="138" x2="173" y2="147" stroke="#FACC15" stroke-width="2.5"/>
+      </svg>`,
+
+      whiteboard: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="18" y="20" width="184" height="122" rx="10" fill="#1E293B" stroke="#0F172A" stroke-width="4"/>
+        <rect x="29" y="31" width="162" height="98" rx="4" fill="#ECFDF5"/>
+        <rect x="40" y="42" width="66" height="44" rx="6" fill="#059669"/>
+        <text x="73" y="70" font-family="sans-serif" font-size="16" font-weight="900" fill="#FDE047" text-anchor="middle">ABC</text>
+        <rect x="116" y="44" width="64" height="12" rx="4" fill="#CBD5E1"/>
+        <rect x="116" y="64" width="52" height="12" rx="4" fill="#CBD5E1"/>
+        <rect x="40" y="96" width="140" height="22" rx="6" fill="#D1FAE5"/>
+        <circle cx="56" cy="107" r="6" fill="#EF4444"/>
+        <circle cx="76" cy="107" r="6" fill="#FACC15"/>
+        <circle cx="96" cy="107" r="6" fill="#10B981"/>
+        <circle cx="116" cy="107" r="6" fill="#0EA5E9"/>
+        <rect x="64" y="142" width="92" height="11" rx="4" fill="#64748B"/>
+        <rect x="86" y="145" width="24" height="5" rx="2" fill="#FACC15"/>
+        <rect x="118" y="145" width="20" height="5" rx="2" fill="#10B981"/>
+      </svg>`,
+
+      speaker: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="44" y="18" width="92" height="136" rx="14" fill="#1E293B" stroke="#0F172A" stroke-width="4"/>
+        <circle cx="90" cy="54" r="18" fill="#334155" stroke="#64748B" stroke-width="3"/>
+        <circle cx="90" cy="54" r="7" fill="#FACC15"/>
+        <circle cx="90" cy="112" r="30" fill="#334155" stroke="#64748B" stroke-width="3.5"/>
+        <circle cx="90" cy="112" r="14" fill="#10B981"/>
+        <circle cx="90" cy="112" r="6" fill="#0F172A"/>
+        <path d="M150 62 Q166 85 150 108" stroke="#10B981" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M166 46 Q190 85 166 124" stroke="#FACC15" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M182 32 Q212 85 182 138" stroke="#059669" stroke-width="4.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+      </svg>`,
+
+      tv: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="18" y="22" width="184" height="110" rx="10" fill="#0F172A" stroke="#334155" stroke-width="4"/>
+        <rect x="28" y="32" width="164" height="90" rx="4" fill="#1E3A8A"/>
+        <circle cx="152" cy="56" r="16" fill="#FACC15"/>
+        <polygon points="28,122 86,68 134,122" fill="#10B981"/>
+        <polygon points="94,122 146,78 192,122" fill="#059669"/>
+        <circle cx="110" cy="127" r="2.8" fill="#10B981"/>
+        <path d="M68 132 L54 152 M152 132 L166 152" stroke="#1E293B" stroke-width="7" stroke-linecap="round"/>
+      </svg>`,
+
+      water_dispenser: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="64" y="12" width="92" height="148" rx="10" fill="#FFFFFF" stroke="#1E293B" stroke-width="4"/>
+        <rect x="74" y="22" width="72" height="22" rx="4" fill="#0F172A"/>
+        <text x="93" y="37" font-family="monospace" font-size="11" font-weight="bold" fill="#EF4444" text-anchor="middle">98°</text>
+        <text x="128" y="37" font-family="monospace" font-size="11" font-weight="bold" fill="#38BDF8" text-anchor="middle">12°</text>
+        <rect x="76" y="54" width="68" height="54" rx="6" fill="#E2E8F0" stroke="#94A3B8" stroke-width="2"/>
+        <rect x="88" y="56" width="10" height="14" rx="2" fill="#EF4444"/>
+        <rect x="106" y="56" width="10" height="14" rx="2" fill="#10B981"/>
+        <rect x="124" y="56" width="10" height="14" rx="2" fill="#3B82F6"/>
+        <path d="M129 72 L129 88" stroke="#38BDF8" stroke-width="3.5" stroke-linecap="round"/>
+        <rect x="119" y="88" width="20" height="18" rx="3" fill="#FEF08A" stroke="#CA8A04" stroke-width="2"/>
+        <rect x="76" y="116" width="68" height="34" rx="5" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+      </svg>`,
+
+      air_purifier: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <path d="M84 30 Q92 14 102 22 M110 26 Q116 10 126 18 M136 30 Q144 16 152 24" stroke="#10B981" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <rect x="66" y="36" width="88" height="122" rx="18" fill="#FFFFFF" stroke="#1E293B" stroke-width="4"/>
+        <rect x="82" y="44" width="56" height="8" rx="4" fill="#334155"/>
+        <circle cx="110" cy="72" r="14" fill="#0F172A"/>
+        <circle cx="110" cy="72" r="10" fill="none" stroke="#10B981" stroke-width="3.5"/>
+        <circle cx="110" cy="72" r="4" fill="#FACC15"/>
+        <rect x="78" y="98" width="64" height="46" rx="10" fill="#E2E8F0"/>
+        <line x1="86" y1="108" x2="134" y2="108" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+        <line x1="86" y1="118" x2="134" y2="118" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+        <line x1="86" y1="128" x2="134" y2="128" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+        <line x1="86" y1="138" x2="134" y2="138" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+      </svg>`,
+
+      extension_cord: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <path d="M178 96 C205 96 208 144 160 146 L70 146 C38 146 38 122 66 122" fill="none" stroke="#1E293B" stroke-width="8" stroke-linecap="round"/>
+        <rect x="52" y="112" width="24" height="20" rx="5" fill="#334155"/>
+        <line x1="42" y1="117" x2="52" y2="117" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+        <line x1="42" y1="127" x2="52" y2="127" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+        <rect x="20" y="34" width="160" height="66" rx="14" fill="#FFFFFF" stroke="#1E293B" stroke-width="4"/>
+        <rect x="32" y="48" width="22" height="16" rx="4" fill="#EF4444"/>
+        <!-- 3 Outlets -->
+        <rect x="64" y="46" width="30" height="42" rx="6" fill="#F1F5F9" stroke="#64748B" stroke-width="2"/>
+        <rect x="72" y="54" width="4" height="12" fill="#1E293B"/><rect x="82" y="54" width="4" height="12" fill="#1E293B"/><circle cx="79" cy="76" r="3.5" fill="#1E293B"/>
+        <rect x="102" y="46" width="30" height="42" rx="6" fill="#F1F5F9" stroke="#64748B" stroke-width="2"/>
+        <rect x="110" y="54" width="4" height="12" fill="#1E293B"/><rect x="120" y="54" width="4" height="12" fill="#1E293B"/><circle cx="117" cy="76" r="3.5" fill="#1E293B"/>
+        <rect x="140" y="46" width="30" height="42" rx="6" fill="#F1F5F9" stroke="#64748B" stroke-width="2"/>
+        <rect x="148" y="54" width="4" height="12" fill="#1E293B"/><rect x="158" y="54" width="4" height="12" fill="#1E293B"/><circle cx="155" cy="76" r="3.5" fill="#1E293B"/>
+        <circle cx="43" cy="76" r="5" fill="#FACC15"/>
+      </svg>`,
+
+      digital_clock: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="16" y="32" width="188" height="106" rx="16" fill="#1E293B" stroke="#0F172A" stroke-width="4.5"/>
+        <rect x="28" y="44" width="164" height="82" rx="10" fill="#0F172A"/>
+        <text x="110" y="100" font-family="monospace" font-size="48" font-weight="900" fill="#10B981" text-anchor="middle">08:30</text>
+        <text x="110" y="118" font-family="sans-serif" font-size="13" font-weight="700" fill="#FACC15" text-anchor="middle">THU  •  26°C</text>
+      </svg>`,
+
+      teacher_desk: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="44" y="66" width="132" height="90" rx="8" fill="#1E293B" stroke="#0F172A" stroke-width="4"/>
+        <rect x="58" y="82" width="104" height="62" rx="5" fill="#334155"/>
+        <rect x="34" y="52" width="152" height="18" rx="6" fill="#059669" stroke="#064E3B" stroke-width="3"/>
+        <polygon points="62,52 78,24 142,24 158,52" fill="#0F172A" stroke="#334155" stroke-width="3"/>
+        <polygon points="72,48 84,29 136,29 148,48" fill="#38BDF8"/>
+        <path d="M158 52 Q170 28 160 18" stroke="#1E293B" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <circle cx="158" cy="18" r="5" fill="#FACC15" stroke="#1E293B" stroke-width="2"/>
+        <circle cx="72" cy="112" r="5" fill="#FACC15"/>
+        <rect x="86" y="104" width="60" height="16" rx="4" fill="#10B981" opacity="0.4"/>
+      </svg>`,
+
+      printer: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="64" y="14" width="92" height="44" rx="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="3.5"/>
+        <line x1="78" y1="28" x2="142" y2="28" stroke="#94A3B8" stroke-width="3"/>
+        <line x1="78" y1="38" x2="128" y2="38" stroke="#94A3B8" stroke-width="3"/>
+        <rect x="26" y="54" width="168" height="68" rx="14" fill="#334155" stroke="#1E293B" stroke-width="4"/>
+        <rect x="40" y="66" width="140" height="22" rx="6" fill="#475569"/>
+        <circle cx="164" cy="77" r="6" fill="#10B981"/>
+        <circle cx="146" cy="77" r="5" fill="#FACC15"/>
+        <rect x="58" y="102" width="104" height="12" rx="4" fill="#0F172A"/>
+        <rect x="68" y="108" width="84" height="48" rx="4" fill="#FFFFFF" stroke="#1E293B" stroke-width="3.5"/>
+        <line x1="82" y1="124" x2="138" y2="124" stroke="#059669" stroke-width="4" stroke-linecap="round"/>
+        <line x1="82" y1="136" x2="126" y2="136" stroke="#94A3B8" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="82" y1="146" x2="134" y2="146" stroke="#94A3B8" stroke-width="3.5" stroke-linecap="round"/>
+      </svg>`,
+
+      charger: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <!-- Adapter Brick -->
+        <rect x="28" y="42" width="52" height="58" rx="10" fill="#FFFFFF" stroke="#1E293B" stroke-width="4"/>
+        <rect x="14" y="54" width="14" height="7" rx="2" fill="#94A3B8"/>
+        <rect x="14" y="79" width="14" height="7" rx="2" fill="#94A3B8"/>
+        <path d="M80 71 C106 71 98 134 128 134 L148 134" fill="none" stroke="#1E293B" stroke-width="6" stroke-linecap="round"/>
+        <path d="M148 134 L148 122" stroke="#1E293B" stroke-width="6" stroke-linecap="round"/>
+        <!-- Smartphone -->
+        <rect x="118" y="20" width="64" height="104" rx="12" fill="#1E293B" stroke="#0F172A" stroke-width="3.5"/>
+        <rect x="125" y="30" width="50" height="82" rx="5" fill="#064E3B"/>
+        <polygon points="154,48 139,74 150,74 146,96 163,68 151,68" fill="#FACC15"/>
+      </svg>`,
+
+      microphone: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <g transform="rotate(-32 110 85)">
+          <rect x="97" y="76" width="26" height="86" rx="11" fill="#1E293B" stroke="#0F172A" stroke-width="3.5"/>
+          <rect x="97" y="96" width="26" height="10" fill="#10B981"/>
+          <circle cx="110" cy="122" r="5" fill="#FACC15"/>
+          <circle cx="110" cy="50" r="28" fill="#CBD5E1" stroke="#334155" stroke-width="4"/>
+          <line x1="82" y1="50" x2="138" y2="50" stroke="#475569" stroke-width="4"/>
+          <line x1="90" y1="36" x2="130" y2="36" stroke="#94A3B8" stroke-width="2.5"/>
+          <line x1="90" y1="64" x2="130" y2="64" stroke="#94A3B8" stroke-width="2.5"/>
+        </g>
+        <path d="M144 36 Q158 48 148 64" stroke="#10B981" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+        <path d="M158 26 Q178 46 164 72" stroke="#FACC15" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+      </svg>`,
+
+      mosquito_swatter: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <g transform="rotate(35 110 85)">
+          <!-- Racket Head -->
+          <ellipse cx="110" cy="56" rx="38" ry="48" fill="#FEF9C3" stroke="#059669" stroke-width="8"/>
+          <line x1="82" y1="34" x2="138" y2="34" stroke="#94A3B8" stroke-width="2"/>
+          <line x1="74" y1="50" x2="146" y2="50" stroke="#94A3B8" stroke-width="2"/>
+          <line x1="74" y1="66" x2="146" y2="66" stroke="#94A3B8" stroke-width="2"/>
+          <line x1="84" y1="82" x2="136" y2="82" stroke="#94A3B8" stroke-width="2"/>
+          <line x1="94" y1="14" x2="94" y2="98" stroke="#94A3B8" stroke-width="2"/>
+          <line x1="110" y1="10" x2="110" y2="102" stroke="#94A3B8" stroke-width="2"/>
+          <line x1="126" y1="14" x2="126" y2="98" stroke="#94A3B8" stroke-width="2"/>
+          <!-- Lightning Spark -->
+          <polygon points="114,34 99,58 109,58 105,78 122,52 111,52" fill="#EAB308" stroke="#1E293B" stroke-width="1.5"/>
+          <!-- Handle -->
+          <rect x="100" y="102" width="20" height="62" rx="9" fill="#1E293B"/>
+          <rect x="104" y="114" width="12" height="16" rx="4" fill="#EF4444"/>
+          <circle cx="110" cy="144" r="4" fill="#FACC15"/>
+        </g>
+      </svg>`,
+
+      dehumidifier: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="58" y="20" width="104" height="134" rx="16" fill="#FFFFFF" stroke="#1E293B" stroke-width="4"/>
+        <rect x="74" y="28" width="72" height="10" rx="4" fill="#334155"/>
+        <rect x="76" y="48" width="68" height="26" rx="6" fill="#0F172A"/>
+        <text x="110" y="66" font-family="monospace" font-size="16" font-weight="bold" fill="#38BDF8" text-anchor="middle">50%</text>
+        <!-- Water Tank Window -->
+        <rect x="74" y="88" width="72" height="54" rx="8" fill="#E0F2FE" stroke="#64748B" stroke-width="2.5"/>
+        <path d="M76 114 Q92 108 110 114 T144 114 L144 140 L76 140 Z" fill="#38BDF8"/>
+        <path d="M110 92 C110 92 103 101 103 105 C103 109 106 112 110 112 C114 112 117 109 117 105 C117 101 110 92 110 92 Z" fill="#0284C7"/>
+        <circle cx="76" cy="156" r="6" fill="#1E293B"/>
+        <circle cx="144" cy="156" r="6" fill="#1E293B"/>
+      </svg>`,
+
+      heater: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <path d="M76 26 Q82 12 76 6 M110 24 Q116 10 110 4 M144 26 Q150 12 144 6" stroke="#F97316" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <rect x="48" y="34" width="124" height="114" rx="16" fill="#1E293B" stroke="#0F172A" stroke-width="4"/>
+        <rect x="62" y="48" width="96" height="84" rx="10" fill="#451A03"/>
+        <rect x="70" y="60" width="80" height="10" rx="5" fill="#F97316"/>
+        <rect x="70" y="85" width="80" height="10" rx="5" fill="#FACC15"/>
+        <rect x="70" y="110" width="80" height="10" rx="5" fill="#F97316"/>
+        <!-- Protective Grill Lines -->
+        <line x1="84" y1="48" x2="84" y2="132" stroke="#94A3B8" stroke-width="2.5"/>
+        <line x1="110" y1="48" x2="110" y2="132" stroke="#94A3B8" stroke-width="2.5"/>
+        <line x1="136" y1="48" x2="136" y2="132" stroke="#94A3B8" stroke-width="2.5"/>
+        <rect x="38" y="148" width="144" height="12" rx="6" fill="#334155"/>
+      </svg>`,
+
+      vacuum: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <path d="M138 30 L82 132" stroke="#1E293B" stroke-width="11" stroke-linecap="round"/>
+        <path d="M138 30 L82 132" stroke="#10B981" stroke-width="4" stroke-linecap="round"/>
+        <!-- Motor & Dustbin -->
+        <rect x="116" y="18" width="48" height="32" rx="10" fill="#1E293B" transform="rotate(28 140 34)"/>
+        <rect x="114" y="46" width="28" height="44" rx="8" fill="#E2E8F0" stroke="#334155" stroke-width="3" transform="rotate(28 128 68)"/>
+        <circle cx="152" cy="28" r="7" fill="#FACC15"/>
+        <!-- Floor Nozzle -->
+        <path d="M44 134 L112 134 L118 152 L38 152 Z" fill="#1E293B"/>
+        <rect x="52" y="140" width="52" height="6" rx="3" fill="#10B981"/>
+        <!-- Suction Lines -->
+        <path d="M22 140 L34 144 M20 150 L32 150" stroke="#EAB308" stroke-width="4" stroke-linecap="round"/>
+      </svg>`,
+
+      curtains: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="34" y="28" width="152" height="126" rx="8" fill="#BAE6FD" stroke="#1E293B" stroke-width="4"/>
+        <circle cx="110" cy="68" r="18" fill="#FDE047"/>
+        <!-- Motorized Rail + Motor Box -->
+        <rect x="20" y="18" width="180" height="14" rx="6" fill="#1E293B"/>
+        <rect x="178" y="30" width="18" height="36" rx="5" fill="#334155"/>
+        <circle cx="187" cy="48" r="4" fill="#10B981"/>
+        <!-- Curtains -->
+        <path d="M34 32 L78 32 L70 154 L34 154 Z" fill="#059669" stroke="#064E3B" stroke-width="2.5"/>
+        <path d="M186 32 L142 32 L150 154 L186 154 Z" fill="#059669" stroke="#064E3B" stroke-width="2.5"/>
+        <!-- Open/Close Arrows -->
+        <path d="M84 114 L136 114" stroke="#1E293B" stroke-width="5" stroke-linecap="round"/>
+        <polygon points="80,114 94,104 94,124" fill="#1E293B"/>
+        <polygon points="140,114 126,104 126,124" fill="#1E293B"/>
+      </svg>`,
+
+      outlet: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="58" y="12" width="104" height="146" rx="14" fill="#FFFFFF" stroke="#1E293B" stroke-width="4.5"/>
+        <circle cx="110" cy="24" r="3.5" fill="#94A3B8"/>
+        <circle cx="110" cy="146" r="3.5" fill="#94A3B8"/>
+        <!-- Top Socket -->
+        <rect x="78" y="34" width="64" height="44" rx="10" fill="#F1F5F9" stroke="#94A3B8" stroke-width="2.5"/>
+        <rect x="94" y="42" width="6" height="16" rx="2" fill="#1E293B"/>
+        <rect x="120" y="44" width="6" height="14" rx="2" fill="#1E293B"/>
+        <circle cx="110" cy="67" r="5" fill="#1E293B"/>
+        <!-- Bottom Socket -->
+        <rect x="78" y="92" width="64" height="44" rx="10" fill="#F1F5F9" stroke="#94A3B8" stroke-width="2.5"/>
+        <rect x="94" y="100" width="6" height="16" rx="2" fill="#1E293B"/>
+        <rect x="120" y="102" width="6" height="14" rx="2" fill="#1E293B"/>
+        <circle cx="110" cy="125" r="5" fill="#1E293B"/>
+      </svg>`,
+
+      switch: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="52" y="16" width="116" height="138" rx="14" fill="#FFFFFF" stroke="#1E293B" stroke-width="4.5"/>
+        <rect x="72" y="34" width="76" height="102" rx="8" fill="#E2E8F0" stroke="#94A3B8" stroke-width="2.5"/>
+        <!-- Upper Rocker (ON) -->
+        <rect x="80" y="42" width="60" height="40" rx="5" fill="#FFFFFF" stroke="#475569" stroke-width="2.5"/>
+        <rect x="124" y="57" width="8" height="10" rx="2" fill="#10B981"/>
+        <!-- Lower Rocker (OFF) -->
+        <rect x="80" y="88" width="60" height="40" rx="5" fill="#F8FAFC" stroke="#475569" stroke-width="2.5"/>
+        <rect x="124" y="103" width="8" height="10" rx="2" fill="#FACC15"/>
+      </svg>`,
+
+      remote: `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg">
+        <path d="M96 18 Q110 6 124 18" stroke="#10B981" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M84 10 Q110 -6 136 10" stroke="#FACC15" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <rect x="74" y="26" width="72" height="134" rx="16" fill="#1E293B" stroke="#0F172A" stroke-width="4"/>
+        <rect x="86" y="38" width="48" height="26" rx="5" fill="#D1FAE5"/>
+        <text x="110" y="56" font-family="monospace" font-size="14" font-weight="900" fill="#064E3B" text-anchor="middle">26°C</text>
+        <circle cx="94" cy="80" r="8" fill="#EF4444"/>
+        <circle cx="126" cy="80" r="8" fill="#10B981"/>
+        <rect x="86" y="98" width="20" height="14" rx="4" fill="#64748B"/>
+        <rect x="114" y="98" width="20" height="14" rx="4" fill="#64748B"/>
+        <rect x="86" y="120" width="20" height="14" rx="4" fill="#64748B"/>
+        <rect x="114" y="120" width="20" height="14" rx="4" fill="#64748B"/>
+        <rect x="92" y="142" width="36" height="8" rx="4" fill="#FACC15"/>
+      </svg>`,
+
+      // --- 8 ACTION VERB ILLUSTRATIONS ---
+      turn_on: `<svg viewBox="0 0 260 170" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="130" cy="85" r="68" fill="#FEF08A" opacity="0.55"/>
+        <path d="M130 8 L130 22 M195 30 L185 40 M215 85 L201 85 M65 30 L75 40 M45 85 L59 85" stroke="#EAB308" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="130" cy="85" r="52" fill="#059669" stroke="#064E3B" stroke-width="5"/>
+        <path d="M130 50 L130 80" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+        <path d="M107 64 A30 30 0 1 0 153 64" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+        <rect x="172" y="118" width="58" height="30" rx="15" fill="#FACC15" stroke="#1E293B" stroke-width="3"/>
+        <text x="201" y="139" font-family="sans-serif" font-size="16" font-weight="900" fill="#1E293B" text-anchor="middle">ON</text>
+      </svg>`,
+
+      turn_off: `<svg viewBox="0 0 260 170" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="130" cy="85" r="56" fill="#E2E8F0"/>
+        <circle cx="130" cy="85" r="50" fill="#334155" stroke="#0F172A" stroke-width="5"/>
+        <path d="M130 52 L130 80" stroke="#94A3B8" stroke-width="9" stroke-linecap="round"/>
+        <path d="M107 66 A30 30 0 1 0 153 66" fill="none" stroke="#94A3B8" stroke-width="9" stroke-linecap="round"/>
+        <rect x="168" y="118" width="66" height="30" rx="15" fill="#EF4444" stroke="#1E293B" stroke-width="3"/>
+        <text x="201" y="139" font-family="sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="middle">OFF</text>
+      </svg>`,
+
+      plug_in: `<svg viewBox="0 0 260 170" xmlns="http://www.w3.org/2000/svg">
+        <!-- Cable + Plug Moving Right -->
+        <path d="M10 85 L52 85" stroke="#1E293B" stroke-width="10" stroke-linecap="round"/>
+        <rect x="48" y="59" width="44" height="52" rx="10" fill="#1E293B"/>
+        <rect x="92" y="70" width="22" height="8" rx="3" fill="#94A3B8"/>
+        <rect x="92" y="92" width="22" height="8" rx="3" fill="#94A3B8"/>
+        <!-- Emerald Arrow IN -->
+        <path d="M118 85 L154 85" stroke="#059669" stroke-width="8" stroke-linecap="round"/>
+        <polygon points="164,85 144,71 144,99" fill="#059669"/>
+        <!-- Wall Outlet -->
+        <rect x="174" y="34" width="68" height="102" rx="12" fill="#FFFFFF" stroke="#1E293B" stroke-width="4.5"/>
+        <rect x="190" y="56" width="36" height="58" rx="8" fill="#F1F5F9" stroke="#64748B" stroke-width="2.5"/>
+        <rect x="198" y="68" width="5" height="16" fill="#1E293B"/>
+        <rect x="213" y="68" width="5" height="16" fill="#1E293B"/>
+        <circle cx="208" cy="98" r="4.5" fill="#1E293B"/>
+      </svg>`,
+
+      unplug: `<svg viewBox="0 0 260 170" xmlns="http://www.w3.org/2000/svg">
+        <!-- Cable + Plug Pulling Left -->
+        <path d="M8 85 L36 85" stroke="#1E293B" stroke-width="10" stroke-linecap="round"/>
+        <rect x="34" y="59" width="44" height="52" rx="10" fill="#1E293B"/>
+        <rect x="78" y="70" width="22" height="8" rx="3" fill="#94A3B8"/>
+        <rect x="78" y="92" width="22" height="8" rx="3" fill="#94A3B8"/>
+        <!-- Amber Arrow OUT -->
+        <path d="M158 85 L120 85" stroke="#EAB308" stroke-width="8" stroke-linecap="round"/>
+        <polygon points="108,85 128,71 128,99" fill="#EAB308"/>
+        <!-- Wall Outlet -->
+        <rect x="174" y="34" width="68" height="102" rx="12" fill="#FFFFFF" stroke="#1E293B" stroke-width="4.5"/>
+        <rect x="190" y="56" width="36" height="58" rx="8" fill="#F1F5F9" stroke="#64748B" stroke-width="2.5"/>
+        <rect x="198" y="68" width="5" height="16" fill="#1E293B"/>
+        <rect x="213" y="68" width="5" height="16" fill="#1E293B"/>
+        <circle cx="208" cy="98" r="4.5" fill="#1E293B"/>
+      </svg>`,
+
+      switch_on: `<svg viewBox="0 0 260 170" xmlns="http://www.w3.org/2000/svg">
+        <!-- Wall Switch Plate -->
+        <rect x="36" y="30" width="84" height="110" rx="12" fill="#FFFFFF" stroke="#1E293B" stroke-width="4"/>
+        <rect x="56" y="50" width="44" height="70" rx="8" fill="#E2E8F0"/>
+        <rect x="62" y="56" width="32" height="32" rx="6" fill="#10B981" stroke="#064E3B" stroke-width="2.5"/>
+        <text x="78" y="77" font-family="sans-serif" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle">ON</text>
+        <!-- Lit Bulb -->
+        <circle cx="186" cy="76" r="46" fill="#FEF08A" opacity="0.7"/>
+        <path d="M186 42 C166 42 154 56 154 74 C154 88 164 96 170 106 L202 106 C208 96 218 88 218 74 C218 56 206 42 186 42 Z" fill="#FACC15" stroke="#CA8A04" stroke-width="4"/>
+        <rect x="172" y="106" width="28" height="16" rx="4" fill="#334155"/>
+        <path d="M186 22 L186 32 M224 44 L216 52 M148 44 L156 52" stroke="#EAB308" stroke-width="4.5" stroke-linecap="round"/>
+      </svg>`,
+
+      switch_off: `<svg viewBox="0 0 260 170" xmlns="http://www.w3.org/2000/svg">
+        <!-- Wall Switch Plate -->
+        <rect x="36" y="30" width="84" height="110" rx="12" fill="#FFFFFF" stroke="#1E293B" stroke-width="4"/>
+        <rect x="56" y="50" width="44" height="70" rx="8" fill="#E2E8F0"/>
+        <rect x="62" y="82" width="32" height="32" rx="6" fill="#475569" stroke="#1E293B" stroke-width="2.5"/>
+        <text x="78" y="102" font-family="sans-serif" font-size="11" font-weight="900" fill="#FFFFFF" text-anchor="middle">OFF</text>
+        <!-- Unlit Bulb -->
+        <path d="M186 42 C166 42 154 56 154 74 C154 88 164 96 170 106 L202 106 C208 96 218 88 218 74 C218 56 206 42 186 42 Z" fill="#CBD5E1" stroke="#64748B" stroke-width="4"/>
+        <rect x="172" y="106" width="28" height="16" rx="4" fill="#334155"/>
+      </svg>`,
+
+      adjust: `<svg viewBox="0 0 260 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="28" y="24" width="204" height="122" rx="18" fill="#1E293B" stroke="#0F172A" stroke-width="4"/>
+        <!-- Slider 1 -->
+        <line x1="56" y1="62" x2="204" y2="62" stroke="#475569" stroke-width="10" stroke-linecap="round"/>
+        <line x1="56" y1="62" x2="152" y2="62" stroke="#10B981" stroke-width="10" stroke-linecap="round"/>
+        <circle cx="152" cy="62" r="15" fill="#FACC15" stroke="#FFFFFF" stroke-width="4"/>
+        <!-- Slider 2 -->
+        <line x1="56" y1="112" x2="204" y2="112" stroke="#475569" stroke-width="10" stroke-linecap="round"/>
+        <line x1="56" y1="112" x2="110" y2="112" stroke="#38BDF8" stroke-width="10" stroke-linecap="round"/>
+        <circle cx="110" cy="112" r="15" fill="#FFFFFF" stroke="#10B981" stroke-width="4"/>
+        <text x="196" y="47" font-family="sans-serif" font-size="18" font-weight="900" fill="#FACC15">+</text>
+        <text x="52" y="47" font-family="sans-serif" font-size="18" font-weight="900" fill="#CBD5E1">−</text>
+      </svg>`,
+
+      charge: `<svg viewBox="0 0 260 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="42" y="42" width="160" height="86" rx="16" fill="#FFFFFF" stroke="#1E293B" stroke-width="6"/>
+        <rect x="202" y="66" width="16" height="38" rx="6" fill="#1E293B"/>
+        <rect x="54" y="54" width="38" height="62" rx="7" fill="#10B981"/>
+        <rect x="98" y="54" width="38" height="62" rx="7" fill="#10B981"/>
+        <rect x="142" y="54" width="38" height="62" rx="7" fill="#34D399" opacity="0.6"/>
+        <polygon points="128,46 102,90 121,90 115,126 146,80 126,80" fill="#FACC15" stroke="#1E293B" stroke-width="3"/>
+      </svg>`
+    };
+
+    /* =========================================================================
+       3. PRESENTATION CONTENT DATA (ALL 13 SLIDES)
+       ========================================================================= */
+    const SLIDE_META = [
+      { title: "WELCOME", sub: "教室常見電器與電器相關詞彙", hasFlip: false },
+      { title: "CLASSROOM APPLIANCES — PART 1", sub: "教室常見電器 (一)", hasFlip: true },
+      { title: "CLASSROOM APPLIANCES — PART 2", sub: "教室常見電器 (二)", hasFlip: true },
+      { title: "OTHER ELECTRICAL APPLIANCES — PART 1", sub: "其他常見電器 (一)", hasFlip: true },
+      { title: "OTHER ELECTRICAL APPLIANCES — PART 2", sub: "其他常見電器 (二)", hasFlip: true },
+      { title: "IMPORTANT ACTION VERBS — PART 1", sub: "重要操作動詞 (一)", hasFlip: true },
+      { title: "IMPORTANT ACTION VERBS — PART 2", sub: "重要操作動詞 (二)", hasFlip: true },
+      { title: "CLASSROOM COMMANDS", sub: "聽從教室指令", hasFlip: true },
+      { title: "ACTIVITY 1: WHAT'S MISSING?", sub: "記憶大考驗：少了哪一樣？", hasFlip: false },
+      { title: "ACTIVITY 2: MATCH THE APPLIANCE", sub: "電器配對遊戲", hasFlip: false },
+      { title: "ACTIVITY 3: CLASSROOM COMMAND CHALLENGE", sub: "教室指令大挑戰", hasFlip: false },
+      { title: "FINAL QUIZ", sub: "綜合十題測驗", hasFlip: false },
+      { title: "LESSON WRAP-UP", sub: "今日重點回顧", hasFlip: false }
+    ];
+
+    const VOCAB_SLIDES = {
+      2: [
+        { key: "fan", en: "Electric Fan", zh: "電風扇" },
+        { key: "light", en: "Light / Lamp", zh: "電燈" },
+        { key: "ac", en: "Air Conditioner (AC)", zh: "冷氣機" },
+        { key: "projector", en: "Projector", zh: "投影機" },
+        { key: "computer", en: "Computer", zh: "電腦" },
+        { key: "whiteboard", en: "Interactive Whiteboard", zh: "電子白板" }
+      ],
+      3: [
+        { key: "speaker", en: "Speaker", zh: "喇叭" },
+        { key: "tv", en: "Television (TV)", zh: "電視" },
+        { key: "water_dispenser", en: "Water Dispenser", zh: "飲水機" },
+        { key: "air_purifier", en: "Air Purifier", zh: "空氣清淨機" },
+        { key: "extension_cord", en: "Extension Cord", zh: "延長線" },
+        { key: "digital_clock", en: "Digital Clock", zh: "電子時鐘" }
+      ],
+      4: [
+        { key: "teacher_desk", en: "Electronic Teacher's Desk", zh: "電子講桌" },
+        { key: "printer", en: "Printer", zh: "印表機" },
+        { key: "charger", en: "Charger", zh: "充電器" },
+        { key: "microphone", en: "Microphone", zh: "麥克風" },
+        { key: "mosquito_swatter", en: "Electric Mosquito Swatter", zh: "電蚊拍" },
+        { key: "dehumidifier", en: "Dehumidifier", zh: "除濕機" }
+      ],
+      5: [
+        { key: "heater", en: "Electric Heater", zh: "電暖器" },
+        { key: "vacuum", en: "Vacuum Cleaner", zh: "吸塵器" },
+        { key: "curtains", en: "Motorized Curtains", zh: "電動窗簾" },
+        { key: "outlet", en: "Power Outlet", zh: "電源插座" },
+        { key: "switch", en: "Switch", zh: "開關" },
+        { key: "remote", en: "Remote Control", zh: "遙控器" }
+      ],
+      6: [
+        { key: "turn_on", en: "Turn on", zh: "打開電源" },
+        { key: "turn_off", en: "Turn off", zh: "關閉電源" },
+        { key: "plug_in", en: "Plug in", zh: "插上插頭" },
+        { key: "unplug", en: "Unplug", zh: "拔掉插頭" }
+      ],
+      7: [
+        { key: "switch_on", en: "Switch on", zh: "開啟開關" },
+        { key: "switch_off", en: "Switch off", zh: "關閉開關" },
+        { key: "adjust", en: "Adjust", zh: "調整" },
+        { key: "charge", en: "Charge", zh: "充電" }
+      ]
+    };
+
+    // Quick lookup map for all 32 items
+    const ALL_VOCAB = {};
+    Object.values(VOCAB_SLIDES).flat().forEach(item => { ALL_VOCAB[item.key] = item; });
+
+    const CLASSROOM_COMMANDS = [
+      { en: "Please turn on the lights.", zh: "請打開電燈。" },
+      { en: "Please turn off the lights.", zh: "請關掉電燈。" },
+      { en: "Please turn on the fan.", zh: "請打開電風扇。" },
+      { en: "Please turn off the AC.", zh: "請關掉冷氣。" },
+      { en: "Please turn on the projector.", zh: "請打開投影機。" },
+      { en: "Please adjust the volume.", zh: "請調整音量。" },
+      { en: "Please plug it in.", zh: "請插上電源。" },
+      { en: "Please unplug it.", zh: "請拔掉插頭。" }
+    ];
+
+    /* =========================================================================
+       4. RENDERING FLIP TILES & COMMAND CARDS (SLIDES 1-8)
+       ========================================================================= */
+    function renderWelcome() {
+      document.getElementById('welcomeIllustration').innerHTML = SVGS.classroomScene;
+    }
+
+    function renderFlipSlide(slideNum) {
+      const container = document.getElementById(`grid-slide-${slideNum}`);
+      const items = VOCAB_SLIDES[slideNum];
+      container.innerHTML = '';
+
+      items.forEach((item, idx) => {
+        const tile = document.createElement('div');
+        tile.className = 'flip-tile';
+        tile.setAttribute('role', 'button');
+        tile.setAttribute('tabindex', '0');
+        tile.setAttribute('aria-label', `${item.en} - Click to reveal Chinese translation`);
+
+        tile.innerHTML = `
+          <div class="flip-tile-inner">
+            <div class="flip-face flip-front">
+              <div class="tile-number">${idx + 1}</div>
+              <div class="tile-art-box">${SVGS[item.key]}</div>
+              <div class="tile-en-front">${item.en}</div>
+              <div class="tile-cta">CLICK TO REVEAL</div>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="tile-zh-back">${item.zh}</div>
+              <div class="tile-en-back">${item.en}</div>
+              <div class="tile-back-hint">CLICK TO FLIP BACK</div>
+            </div>
+          </div>
+        `;
+
+        const toggleFlip = () => {
+          tile.classList.toggle('flipped');
+          SoundFX.flip();
+        };
+        tile.addEventListener('click', toggleFlip);
+        tile.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleFlip();
+          }
+        });
+        container.appendChild(tile);
+      });
+    }
+
+    function renderCommandCards() {
+      const container = document.getElementById('grid-slide-8');
+      container.innerHTML = '';
+
+      CLASSROOM_COMMANDS.forEach((cmd, idx) => {
+        const card = document.createElement('div');
+        card.className = 'cmd-card';
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+
+        card.innerHTML = `
+          <div class="cmd-card-inner">
+            <div class="cmd-face cmd-front">
+              <div class="cmd-left">
+                <div class="cmd-num">${idx + 1}</div>
+                <div class="cmd-en">${cmd.en}</div>
+              </div>
+              <div class="cmd-reveal-tag">CLICK TO REVEAL</div>
+            </div>
+            <div class="cmd-face cmd-back">
+              <div class="cmd-zh">${cmd.zh}</div>
+              <div class="cmd-en-small">${cmd.en}</div>
+            </div>
+          </div>
+        `;
+
+        const toggleCard = () => {
+          card.classList.toggle('flipped');
+          SoundFX.flip();
+        };
+        card.addEventListener('click', toggleCard);
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleCard();
+          }
+        });
+        container.appendChild(card);
+      });
+    }
+
+    function resetAllFlipTiles(currentOnly = true) {
+      const scope = currentOnly ? document.getElementById(`slide-${currentSlide}`) : document;
+      scope.querySelectorAll('.flip-tile.flipped, .cmd-card.flipped').forEach(el => {
+        el.classList.remove('flipped');
+      });
+      SoundFX.click();
+    }
+
+    /* =========================================================================
+       5. SLIDE 9: WHAT'S MISSING? (5 ROUNDS, 10s TIMER, HIDE BUTTON, SCORE)
+       ========================================================================= */
+    const WM_ROUNDS = [
+      {
+        items: ["fan", "light", "ac", "projector", "computer", "whiteboard"],
+        missing: "projector",
+        options: ["Projector", "Computer", "Air Conditioner (AC)"]
+      },
+      {
+        items: ["speaker", "tv", "water_dispenser", "air_purifier", "extension_cord", "digital_clock"],
+        missing: "water_dispenser",
+        options: ["Air Purifier", "Water Dispenser", "Extension Cord"]
+      },
+      {
+        items: ["teacher_desk", "printer", "charger", "microphone", "mosquito_swatter", "dehumidifier"],
+        missing: "mosquito_swatter",
+        options: ["Dehumidifier", "Electric Mosquito Swatter", "Microphone"]
+      },
+      {
+        items: ["heater", "vacuum", "curtains", "outlet", "switch", "remote"],
+        missing: "remote",
+        options: ["Power Outlet", "Switch", "Remote Control"]
+      },
+      {
+        items: ["fan", "air_purifier", "printer", "vacuum", "digital_clock", "charger"],
+        missing: "air_purifier",
+        options: ["Air Purifier", "Electric Fan", "Vacuum Cleaner"]
+      }
+    ];
+
+    const wmState = {
+      roundIdx: 0,
+      score: 0,
+      phase: 'memorize', // 'memorize' | 'guess' | 'answered'
+      timeLeft: 10,
+      intervalId: null
+    };
+
+    function clearWmTimer() {
+      if (wmState.intervalId) {
+        clearInterval(wmState.intervalId);
+        wmState.intervalId = null;
+      }
+    }
+
+    function renderWmRound() {
+      clearWmTimer();
+      wmState.phase = 'memorize';
+      wmState.timeLeft = 10;
+
+      const round = WM_ROUNDS[wmState.roundIdx];
+      document.getElementById('wmRound').textContent = `ROUND ${wmState.roundIdx + 1} / ${WM_ROUNDS.length}`;
+      document.getElementById('wmScore').textContent = `SCORE: ${wmState.score} / ${WM_ROUNDS.length}`;
+      const timerEl = document.getElementById('wmTimer');
+      timerEl.textContent = `⏱ 10s`;
+      timerEl.classList.remove('urgent');
+
+      document.getElementById('wmStartTimerBtn').disabled = false;
+      document.getElementById('wmHideBtn').disabled = false;
+      document.getElementById('wmNextRoundBtn').style.display = 'none';
+      document.getElementById('wmPrompt').textContent = 'MEMORIZE ALL 6 APPLIANCES (10s)!';
+
+      const grid = document.getElementById('wmGrid');
+      grid.innerHTML = '';
+      round.items.forEach(key => {
+        const card = document.createElement('div');
+        card.className = 'missing-card';
+        card.innerHTML = `${SVGS[key]}<div class="missing-label">${ALL_VOCAB[key].en}</div>`;
+        grid.appendChild(card);
+      });
+
+      document.getElementById('wmChoices').innerHTML = `
+        <div style="grid-column: 1 / -1; display:flex; align-items:center; justify-content:center; font-size:1.35em; font-weight:700; color:var(--charcoal-500);">
+          Press <strong style="color:var(--emerald-700); margin:0 0.4em;">START 10s</strong> or <strong style="color:var(--charcoal-900); margin:0 0.4em;">HIDE ONE</strong> when ready!
+        </div>
+      `;
+    }
+
+    function startWmTimer() {
+      if (wmState.phase !== 'memorize') return;
+      clearWmTimer();
+      document.getElementById('wmStartTimerBtn').disabled = true;
+      SoundFX.click();
+
+      wmState.intervalId = setInterval(() => {
+        wmState.timeLeft--;
+        const timerEl = document.getElementById('wmTimer');
+        timerEl.textContent = `⏱ ${wmState.timeLeft}s`;
+        if (wmState.timeLeft <= 3 && wmState.timeLeft > 0) {
+          timerEl.classList.add('urgent');
+          SoundFX.tick();
+        }
+        if (wmState.timeLeft <= 0) {
+          clearWmTimer();
+          hideOneAppliance();
+        }
+      }, 1000);
+    }
+
+    function hideOneAppliance() {
+      if (wmState.phase !== 'memorize') return;
+      clearWmTimer();
+      wmState.phase = 'guess';
+      SoundFX.flip();
+
+      document.getElementById('wmStartTimerBtn').disabled = true;
+      document.getElementById('wmHideBtn').disabled = true;
+      document.getElementById('wmPrompt').textContent = "WHAT'S MISSING?";
+
+      const round = WM_ROUNDS[wmState.roundIdx];
+      // Show the remaining 5 items in shuffled positions + 1 mystery slot
+      const remaining = round.items.filter(k => k !== round.missing);
+      for (let i = remaining.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [remaining[i], remaining[j]] = [remaining[j], remaining[i]];
+      }
+      const mysteryPos = Math.floor(Math.random() * 6);
+      remaining.splice(mysteryPos, 0, '__MYSTERY__');
+
+      const grid = document.getElementById('wmGrid');
+      grid.innerHTML = '';
+      remaining.forEach(key => {
+        const card = document.createElement('div');
+        if (key === '__MYSTERY__') {
+          card.className = 'missing-card mystery';
+          card.id = 'wmMysterySlot';
+          card.innerHTML = `<div class="mystery-q">?</div><div class="mystery-sub">WHAT'S MISSING?</div>`;
+        } else {
+          card.className = 'missing-card';
+          card.innerHTML = `${SVGS[key]}`;
+        }
+        grid.appendChild(card);
+      });
+
+      const choicesEl = document.getElementById('wmChoices');
+      choicesEl.innerHTML = '';
+      const correctEn = ALL_VOCAB[round.missing].en;
+
+      round.options.forEach(optText => {
+        const btn = document.createElement('button');
+        btn.className = 'choice-btn';
+        btn.textContent = optText;
+        btn.addEventListener('click', () => handleWmAnswer(btn, optText === correctEn, round.missing));
+        choicesEl.appendChild(btn);
+      });
+    }
+
+    function handleWmAnswer(clickedBtn, isCorrect, missingKey) {
+      if (wmState.phase !== 'guess') return;
+      wmState.phase = 'answered';
+
+      const correctEn = ALL_VOCAB[missingKey].en;
+      const correctZh = ALL_VOCAB[missingKey].zh;
+
+      document.querySelectorAll('#wmChoices .choice-btn').forEach(btn => {
+        btn.disabled = true;
+        if (btn.textContent === correctEn) btn.classList.add('correct');
+      });
+
+      if (isCorrect) {
+        wmState.score++;
+        SoundFX.correct();
+        document.getElementById('wmPrompt').textContent = `🎉 CORRECT! ${correctEn} (${correctZh})`;
+      } else {
+        clickedBtn.classList.add('wrong');
+        SoundFX.wrong();
+        document.getElementById('wmPrompt').textContent = `💡 ANSWER: ${correctEn} (${correctZh})`;
+      }
+
+      document.getElementById('wmScore').textContent = `SCORE: ${wmState.score} / ${WM_ROUNDS.length}`;
+
+      // Reveal missing appliance in the mystery slot
+      const mysterySlot = document.getElementById('wmMysterySlot');
+      if (mysterySlot) {
+        mysterySlot.className = 'missing-card revealed';
+        mysterySlot.innerHTML = `${SVGS[missingKey]}<div class="missing-label" style="color:var(--emerald-800);">${correctEn} · ${correctZh}</div>`;
+      }
+
+      const nextBtn = document.getElementById('wmNextRoundBtn');
+      if (wmState.roundIdx < WM_ROUNDS.length - 1) {
+        nextBtn.textContent = 'NEXT ROUND ▶';
+        nextBtn.style.display = 'inline-flex';
+      } else {
+        nextBtn.style.display = 'none';
+        document.getElementById('wmPrompt').textContent = `🏆 FINISHED! FINAL SCORE: ${wmState.score} / ${WM_ROUNDS.length}`;
+      }
+    }
+
+    function resetWmGame() {
+      wmState.roundIdx = 0;
+      wmState.score = 0;
+      renderWmRound();
+    }
+
+    /* =========================================================================
+       6. SLIDE 10: MATCH THE APPLIANCE (DRAG-AND-DROP + TAP-TO-MATCH)
+       ========================================================================= */
+    const MATCH_KEYS = [
+      "fan", "ac", "projector", "water_dispenser",
+      "printer", "microphone", "mosquito_swatter", "remote"
+    ];
+
+    const matchState = {
+      score: 0,
+      selectedPic: null,
+      selectedWord: null,
+      matchedKeys: new Set()
+    };
+
+    function shuffleArr(arr) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function initMatchGame() {
+      matchState.score = 0;
+      matchState.selectedPic = null;
+      matchState.selectedWord = null;
+      matchState.matchedKeys.clear();
+
+      document.getElementById('matchScore').textContent = `SCORE: 0 / ${MATCH_KEYS.length}`;
+      document.getElementById('matchStatus').textContent = 'Drag a word onto a picture, OR tap picture & word!';
+
+      const picsGrid = document.getElementById('matchPicsGrid');
+      const wordsGrid = document.getElementById('matchWordsGrid');
+      picsGrid.innerHTML = '';
+      wordsGrid.innerHTML = '';
+
+      const shuffledPics = shuffleArr(MATCH_KEYS);
+      const shuffledWords = shuffleArr(MATCH_KEYS);
+
+      shuffledPics.forEach(key => {
+        const card = document.createElement('div');
+        card.className = 'match-pic-card';
+        card.dataset.key = key;
+        card.innerHTML = `
+          ${SVGS[key]}
+          <div class="match-pic-slot">Drop / Tap Word</div>
+        `;
+
+        // Drag-and-drop dropzone listeners
+        card.addEventListener('dragover', (e) => {
+          if (matchState.matchedKeys.has(key)) return;
+          e.preventDefault();
+          card.classList.add('drag-over');
+        });
+        card.addEventListener('dragleave', () => card.classList.remove('drag-over'));
+        card.addEventListener('drop', (e) => {
+          e.preventDefault();
+          card.classList.remove('drag-over');
+          const draggedKey = e.dataTransfer.getData('text/plain');
+          if (draggedKey && !matchState.matchedKeys.has(key)) {
+            evaluateMatch(key, draggedKey);
+          }
+        });
+
+        // Touchscreen-friendly tap-to-match
+        card.addEventListener('click', () => {
+          if (matchState.matchedKeys.has(key)) return;
+          SoundFX.click();
+          if (matchState.selectedWord) {
+            evaluateMatch(key, matchState.selectedWord);
+          } else {
+            document.querySelectorAll('.match-pic-card.selected').forEach(el => el.classList.remove('selected'));
+            if (matchState.selectedPic === key) {
+              matchState.selectedPic = null;
+            } else {
+              matchState.selectedPic = key;
+              card.classList.add('selected');
+            }
+          }
+        });
+
+        picsGrid.appendChild(card);
+      });
+
+      shuffledWords.forEach(key => {
+        const chip = document.createElement('div');
+        chip.className = 'match-word-chip';
+        chip.dataset.key = key;
+        chip.setAttribute('draggable', 'true');
+        chip.textContent = ALL_VOCAB[key].en;
+
+        chip.addEventListener('dragstart', (e) => {
+          if (matchState.matchedKeys.has(key)) {
+            e.preventDefault();
+            return;
+          }
+          e.dataTransfer.setData('text/plain', key);
+          chip.classList.add('selected');
+        });
+        chip.addEventListener('dragend', () => {
+          if (matchState.selectedWord !== key) chip.classList.remove('selected');
+        });
+
+        // Touchscreen-friendly tap-to-match
+        chip.addEventListener('click', () => {
+          if (matchState.matchedKeys.has(key)) return;
+          SoundFX.click();
+          if (matchState.selectedPic) {
+            evaluateMatch(matchState.selectedPic, key);
+          } else {
+            document.querySelectorAll('.match-word-chip.selected').forEach(el => el.classList.remove('selected'));
+            if (matchState.selectedWord === key) {
+              matchState.selectedWord = null;
+            } else {
+              matchState.selectedWord = key;
+              chip.classList.add('selected');
+            }
+          }
+        });
+
+        wordsGrid.appendChild(chip);
+      });
+    }
+
+    function evaluateMatch(picKey, wordKey) {
+      const picEl = document.querySelector(`.match-pic-card[data-key="${picKey}"]`);
+      const wordEl = document.querySelector(`.match-word-chip[data-key="${wordKey}"]`);
+
+      document.querySelectorAll('.match-pic-card.selected, .match-word-chip.selected').forEach(el => el.classList.remove('selected'));
+      matchState.selectedPic = null;
+      matchState.selectedWord = null;
+
+      if (picKey === wordKey) {
+        matchState.matchedKeys.add(picKey);
+        matchState.score++;
+        SoundFX.correct();
+
+        if (picEl) {
+          picEl.classList.add('matched');
+          picEl.querySelector('.match-pic-slot').textContent = `✓ ${ALL_VOCAB[picKey].en}`;
+        }
+        if (wordEl) {
+          wordEl.classList.add('matched');
+          wordEl.setAttribute('draggable', 'false');
+        }
+
+        document.getElementById('matchScore').textContent = `SCORE: ${matchState.score} / ${MATCH_KEYS.length}`;
+        if (matchState.score === MATCH_KEYS.length) {
+          document.getElementById('matchStatus').textContent = '🎉 AWESOME! You matched all 8 appliances!';
+        } else {
+          document.getElementById('matchStatus').textContent = `✅ Great match! ${ALL_VOCAB[picKey].en} = ${ALL_VOCAB[picKey].zh}`;
+        }
+      } else {
+        SoundFX.wrong();
+        document.getElementById('matchStatus').textContent = '❌ Not quite! Try another match!';
+        if (picEl) {
+          picEl.classList.add('shake');
+          setTimeout(() => picEl.classList.remove('shake'), 400);
+        }
+        if (wordEl) {
+          wordEl.classList.add('shake');
+          setTimeout(() => wordEl.classList.remove('shake'), 400);
+        }
+      }
+    }
+
+    /* =========================================================================
+       7. SLIDE 11: CLASSROOM COMMAND CHALLENGE (8 VISUAL QUESTIONS)
+       ========================================================================= */
+    function buildActionVisualSVG(applianceKey, actionType) {
+      // Composite SVG combining a recognizable appliance with a clear action indicator
+      const badges = {
+        on:     { bg: '#059669', fg: '#FFFFFF', text: 'ON ⏻',  glow: '#FEF08A', opacity: '1' },
+        off:    { bg: '#EF4444', fg: '#FFFFFF', text: 'OFF ⏻', glow: 'none',    opacity: '0.45' },
+        plug:   { bg: '#059669', fg: '#FFFFFF', text: 'PLUG IN ➔', glow: '#D1FAE5', opacity: '1' },
+        unplug: { bg: '#EAB308', fg: '#1E293B', text: '⬅ UNPLUG',  glow: '#FEF9C3', opacity: '1' },
+        adjust: { bg: '#0EA5E9', fg: '#FFFFFF', text: 'VOL − / +', glow: '#E0F2FE', opacity: '1' }
+      };
+      const b = badges[actionType] || badges.on;
+      const innerSvg = SVGS[applianceKey] || SVGS.light;
+
+      return `
+        <svg viewBox="0 0 240 210" xmlns="http://www.w3.org/2000/svg">
+          ${b.glow !== 'none' ? `<circle cx="120" cy="88" r="72" fill="${b.glow}" opacity="0.65"/>` : ''}
+          <g transform="translate(10, 4)" opacity="${b.opacity}">
+            ${innerSvg.replace(/<svg[^>]*>/, '').replace('</svg>', '')}
+          </g>
+          ${actionType === 'off' ? `<line x1="52" y1="26" x2="188" y2="146" stroke="#EF4444" stroke-width="7" stroke-linecap="round" opacity="0.8"/>` : ''}
+          <rect x="46" y="162" width="148" height="36" rx="18" fill="${b.bg}" stroke="#1E293B" stroke-width="3"/>
+          <text x="120" y="186" font-family="Century Gothic, sans-serif" font-size="18" font-weight="900" fill="${b.fg}" text-anchor="middle">${b.text}</text>
+        </svg>
+      `;
+    }
+
+    const COMMAND_CHALLENGES = [
+      {
+        cmd: "Please turn off the lights.",
+        zh: "請關掉電燈。",
+        choices: [
+          { label: "Option A", svg: buildActionVisualSVG("light", "on"), correct: false },
+          { label: "Option B", svg: buildActionVisualSVG("light", "off"), correct: true },
+          { label: "Option C", svg: buildActionVisualSVG("fan", "off"), correct: false }
+        ]
+      },
+      {
+        cmd: "Please turn on the fan.",
+        zh: "請打開電風扇。",
+        choices: [
+          { label: "Option A", svg: buildActionVisualSVG("fan", "on"), correct: true },
+          { label: "Option B", svg: buildActionVisualSVG("ac", "on"), correct: false },
+          { label: "Option C", svg: buildActionVisualSVG("fan", "off"), correct: false }
+        ]
+      },
+      {
+        cmd: "Please turn off the AC.",
+        zh: "請關掉冷氣。",
+        choices: [
+          { label: "Option A", svg: buildActionVisualSVG("ac", "on"), correct: false },
+          { label: "Option B", svg: buildActionVisualSVG("projector", "off"), correct: false },
+          { label: "Option C", svg: buildActionVisualSVG("ac", "off"), correct: true }
+        ]
+      },
+      {
+        cmd: "Please turn on the projector.",
+        zh: "請打開投影機。",
+        choices: [
+          { label: "Option A", svg: buildActionVisualSVG("tv", "on"), correct: false },
+          { label: "Option B", svg: buildActionVisualSVG("projector", "on"), correct: true },
+          { label: "Option C", svg: buildActionVisualSVG("projector", "off"), correct: false }
+        ]
+      },
+      {
+        cmd: "Please adjust the volume.",
+        zh: "請調整音量。",
+        choices: [
+          { label: "Option A", svg: buildActionVisualSVG("speaker", "adjust"), correct: true },
+          { label: "Option B", svg: buildActionVisualSVG("speaker", "off"), correct: false },
+          { label: "Option C", svg: buildActionVisualSVG("light", "on"), correct: false }
+        ]
+      },
+      {
+        cmd: "Please plug it in.",
+        zh: "請插上電源。",
+        choices: [
+          { label: "Option A", svg: SVGS.unplug, correct: false },
+          { label: "Option B", svg: SVGS.turn_off, correct: false },
+          { label: "Option C", svg: SVGS.plug_in, correct: true }
+        ]
+      },
+      {
+        cmd: "Please unplug it.",
+        zh: "請拔掉插頭。",
+        choices: [
+          { label: "Option A", svg: SVGS.plug_in, correct: false },
+          { label: "Option B", svg: SVGS.unplug, correct: true },
+          { label: "Option C", svg: SVGS.charge, correct: false }
+        ]
+      },
+      {
+        cmd: "Please turn on the lights.",
+        zh: "請打開電燈。",
+        choices: [
+          { label: "Option A", svg: buildActionVisualSVG("light", "on"), correct: true },
+          { label: "Option B", svg: buildActionVisualSVG("light", "off"), correct: false },
+          { label: "Option C", svg: buildActionVisualSVG("computer", "on"), correct: false }
+        ]
+      }
+    ];
+
+    const ccState = {
+      idx: 0,
+      score: 0,
+      solvedCurrent: false,
+      hadWrongAttempt: false
+    };
+
+    function renderCommandChallenge() {
+      const q = COMMAND_CHALLENGES[ccState.idx];
+      ccState.solvedCurrent = false;
+      ccState.hadWrongAttempt = false;
+
+      document.getElementById('ccProgress').textContent = `QUESTION ${ccState.idx + 1} / ${COMMAND_CHALLENGES.length}`;
+      document.getElementById('ccScore').textContent = `SCORE: ${ccState.score} / ${COMMAND_CHALLENGES.length}`;
+      document.getElementById('ccCommandText').textContent = `"${q.cmd}"`;
+      document.getElementById('ccNextBtn').style.display = 'none';
+
+      const fb = document.getElementById('ccFeedback');
+      fb.className = 'feedback-strip';
+      fb.innerHTML = `<span>👆 Tap the picture that matches the classroom command!</span><span></span>`;
+
+      const choicesEl = document.getElementById('ccChoices');
+      choicesEl.innerHTML = '';
+
+      q.choices.forEach((ch) => {
+        const card = document.createElement('button');
+        card.className = 'visual-choice-card';
+        card.innerHTML = `${ch.svg}<div class="visual-choice-tag">${ch.label}</div>`;
+        card.addEventListener('click', () => {
+          if (ccState.solvedCurrent) return;
+          if (ch.correct) {
+            ccState.solvedCurrent = true;
+            if (!ccState.hadWrongAttempt) ccState.score++;
+            SoundFX.correct();
+            card.classList.add('correct');
+            document.querySelectorAll('#ccChoices .visual-choice-card').forEach(b => b.disabled = true);
+            document.getElementById('ccScore').textContent = `SCORE: ${ccState.score} / ${COMMAND_CHALLENGES.length}`;
+            fb.className = 'feedback-strip success';
+            fb.innerHTML = `<span>✅ Correct! "${q.cmd}"</span><span style="font-family:var(--font-zh);">${q.zh}</span>`;
+
+            const nextBtn = document.getElementById('ccNextBtn');
+            if (ccState.idx < COMMAND_CHALLENGES.length - 1) {
+              nextBtn.textContent = 'NEXT QUESTION ▶';
+              nextBtn.style.display = 'inline-flex';
+            } else {
+              fb.innerHTML = `<span>🏆 Challenge Complete! Score: ${ccState.score} / ${COMMAND_CHALLENGES.length}</span><span style="font-family:var(--font-zh);">${q.zh}</span>`;
+            }
+          } else {
+            ccState.hadWrongAttempt = true;
+            SoundFX.wrong();
+            card.classList.add('wrong', 'shake');
+            card.disabled = true;
+            setTimeout(() => card.classList.remove('shake'), 380);
+            fb.className = 'feedback-strip error';
+            fb.innerHTML = `<span>❌ Try Again! Look closely at the appliance and action.</span><span></span>`;
+          }
+        });
+        choicesEl.appendChild(card);
+      });
+    }
+
+    function resetCommandChallenge() {
+      ccState.idx = 0;
+      ccState.score = 0;
+      renderCommandChallenge();
+    }
+
+    /* =========================================================================
+       8. SLIDE 12: FINAL 10-QUESTION MULTIPLE-CHOICE QUIZ
+       ========================================================================= */
+    const QUIZ_QUESTIONS = [
+      {
+        cat: "CLASSROOM APPLIANCES",
+        visual: "whiteboard",
+        q: "What is this classroom appliance called?",
+        options: ["Television (TV)", "Interactive Whiteboard", "Projector", "Digital Clock"],
+        answer: 1,
+        zh: "Interactive Whiteboard = 電子白板"
+      },
+      {
+        cat: "CLASSROOM APPLIANCES",
+        visual: "water_dispenser",
+        q: "Which appliance gives students hot and cold drinking water?",
+        options: ["Air Purifier", "Dehumidifier", "Water Dispenser", "Electric Heater"],
+        answer: 2,
+        zh: "Water Dispenser = 飲水機"
+      },
+      {
+        cat: "CLASSROOM APPLIANCES",
+        visual: "extension_cord",
+        q: "What do we use when we need more power sockets?",
+        options: ["Extension Cord", "Remote Control", "Speaker", "Microphone"],
+        answer: 0,
+        zh: "Extension Cord = 延長線"
+      },
+      {
+        cat: "OTHER ELECTRICAL APPLIANCES",
+        visual: "mosquito_swatter",
+        q: "What is the English name for 「電蚊拍」?",
+        options: ["Vacuum Cleaner", "Electric Heater", "Electric Mosquito Swatter", "Electric Fan"],
+        answer: 2,
+        zh: "Electric Mosquito Swatter = 電蚊拍"
+      },
+      {
+        cat: "OTHER ELECTRICAL APPLIANCES",
+        visual: "dehumidifier",
+        q: "Which machine removes extra moisture from the air on rainy days?",
+        options: ["Printer", "Dehumidifier", "Charger", "Projector"],
+        answer: 1,
+        zh: "Dehumidifier = 除濕機"
+      },
+      {
+        cat: "OTHER ELECTRICAL APPLIANCES",
+        visual: "teacher_desk",
+        q: "What is the English name for 「電子講桌」?",
+        options: ["Interactive Whiteboard", "Electronic Teacher's Desk", "Power Outlet", "Motorized Curtains"],
+        answer: 1,
+        zh: "Electronic Teacher's Desk = 電子講桌"
+      },
+      {
+        cat: "ACTION VERBS",
+        visual: "unplug",
+        q: "Which action verb means 「拔掉插頭」?",
+        options: ["Plug in", "Switch on", "Unplug", "Charge"],
+        answer: 2,
+        zh: "Unplug = 拔掉插頭"
+      },
+      {
+        cat: "ACTION VERBS",
+        visual: "charge",
+        q: "Your phone battery is at 5%. What do you need to do?",
+        options: ["Charge it", "Unplug it", "Turn off the fan", "Switch off the light"],
+        answer: 0,
+        zh: "Charge = 充電"
+      },
+      {
+        cat: "CLASSROOM COMMANDS",
+        visual: "speaker",
+        q: "The music is too loud! What should the teacher say?",
+        options: ["Please turn on the lights.", "Please adjust the volume.", "Please plug it in.", "Please turn on the fan."],
+        answer: 1,
+        zh: "Please adjust the volume. = 請調整音量。"
+      },
+      {
+        cat: "CLASSROOM COMMANDS",
+        visual: "ac",
+        q: "Class is over and everyone is leaving. How do you say 「請關掉冷氣。」?",
+        options: ["Please turn on the AC.", "Please turn off the lights.", "Please turn off the AC.", "Please turn on the projector."],
+        answer: 2,
+        zh: "Please turn off the AC. = 請關掉冷氣。"
+      }
+    ];
+
+    const quizState = {
+      idx: 0,
+      score: 0,
+      answered: false
+    };
+
+    function renderQuiz() {
+      const stage = document.getElementById('quizStage');
+      const total = QUIZ_QUESTIONS.length;
+
+      if (quizState.idx >= total) {
+        // Show Final Score Summary
+        document.getElementById('quizProgress').textContent = `COMPLETED (${total} / ${total})`;
+        document.getElementById('quizProgressBar').style.width = '100%';
+        document.getElementById('quizScore').textContent = `FINAL SCORE: ${quizState.score} / ${total}`;
+
+        let trophy = '🏆';
+        let msg = 'Electricity Master! Outstanding work!';
+        if (quizState.score < 9 && quizState.score >= 7) {
+          trophy = '🌟';
+          msg = 'Great job! You know your electrical vocabulary well!';
+        } else if (quizState.score < 7) {
+          trophy = '💡';
+          msg = 'Good effort! Review the flip tiles and try again!';
+        }
+
+        stage.style.gridTemplateColumns = '1fr';
+        stage.innerHTML = `
+          <div class="quiz-summary-card">
+            <div class="quiz-trophy">${trophy}</div>
+            <div class="quiz-final-score">${quizState.score} / ${total}</div>
+            <div class="quiz-final-msg">${msg}</div>
+            <button class="start-lesson-btn" id="quizRetakeMainBtn" style="margin-top:0.4em; font-size:1.65em;">
+              ↻ RETAKE QUIZ
+            </button>
+          </div>
+        `;
+        document.getElementById('quizRetakeMainBtn').addEventListener('click', resetQuiz);
+        return;
+      }
+
+      const q = QUIZ_QUESTIONS[quizState.idx];
+      quizState.answered = false;
+
+      document.getElementById('quizProgress').textContent = `QUESTION ${quizState.idx + 1} / ${total}`;
+      document.getElementById('quizProgressBar').style.width = `${((quizState.idx + 1) / total) * 100}%`;
+      document.getElementById('quizScore').textContent = `SCORE: ${quizState.score} / ${total}`;
+
+      stage.style.gridTemplateColumns = '0.9fr 1.25fr';
+      const letters = ['A', 'B', 'C', 'D'];
+
+      stage.innerHTML = `
+        <div class="quiz-question-card">
+          <div class="quiz-cat-badge">${q.cat}</div>
+          <div class="quiz-visual-box">${SVGS[q.visual]}</div>
+          <div class="quiz-q-text">${q.q}</div>
+        </div>
+        <div class="quiz-answers-col">
+          <div class="quiz-options-grid" id="quizOptions"></div>
+          <div class="feedback-strip" id="quizFeedback">
+            <span>👆 Select one answer to see feedback!</span>
+            <button class="action-btn btn-emerald" id="quizNextQBtn" style="display:none; font-size:0.85em;">
+              ${quizState.idx === total - 1 ? 'SEE FINAL SCORE ▶' : 'NEXT QUESTION ▶'}
+            </button>
+          </div>
+        </div>
+      `;
+
+      const optsContainer = document.getElementById('quizOptions');
+      q.options.forEach((optText, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-opt-btn';
+        btn.innerHTML = `<span class="quiz-opt-letter">${letters[i]}</span><span>${optText}</span>`;
+        btn.addEventListener('click', () => handleQuizAnswer(btn, i));
+        optsContainer.appendChild(btn);
+      });
+
+      document.getElementById('quizNextQBtn').addEventListener('click', () => {
+        SoundFX.click();
+        quizState.idx++;
+        renderQuiz();
+      });
+    }
+
+    function handleQuizAnswer(clickedBtn, chosenIdx) {
+      if (quizState.answered) return;
+      quizState.answered = true;
+
+      const q = QUIZ_QUESTIONS[quizState.idx];
+      const allBtns = document.querySelectorAll('#quizOptions .quiz-opt-btn');
+      allBtns.forEach((b, i) => {
+        b.disabled = true;
+        if (i === q.answer) b.classList.add('correct');
+      });
+
+      const fb = document.getElementById('quizFeedback');
+      if (chosenIdx === q.answer) {
+        quizState.score++;
+        SoundFX.correct();
+        fb.className = 'feedback-strip success';
+        fb.querySelector('span').textContent = `✅ Correct! ${q.zh}`;
+      } else {
+        clickedBtn.classList.add('wrong');
+        SoundFX.wrong();
+        fb.className = 'feedback-strip error';
+        fb.querySelector('span').textContent = `❌ Good try! ${q.zh}`;
+      }
+
+      document.getElementById('quizScore').textContent = `SCORE: ${quizState.score} / ${QUIZ_QUESTIONS.length}`;
+      document.getElementById('quizNextQBtn').style.display = 'inline-flex';
+    }
+
+    function resetQuiz() {
+      SoundFX.click();
+      quizState.idx = 0;
+      quizState.score = 0;
+      renderQuiz();
+    }
+
+    /* =========================================================================
+       9. SLIDE NAVIGATION & GLOBAL CONTROLS
+       ========================================================================= */
+    const TOTAL_SLIDES = 13;
+    let currentSlide = 1;
+
+    function buildDotNav() {
+      const dotNav = document.getElementById('dotNav');
+      dotNav.innerHTML = '';
+      for (let i = 1; i <= TOTAL_SLIDES; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'slide-dot' + (i === 1 ? ' active' : '');
+        dot.title = `Slide ${i}: ${SLIDE_META[i - 1].title}`;
+        dot.setAttribute('aria-label', `Go to slide ${i}`);
+        dot.addEventListener('click', () => goToSlide(i));
+        dotNav.appendChild(dot);
+      }
+    }
+
+    function goToSlide(num) {
+      if (num < 1 || num > TOTAL_SLIDES) return;
+
+      // Cleanly pause countdown timer if leaving Slide 9
+      if (currentSlide === 9 && num !== 9) {
+        clearWmTimer();
+      }
+
+      document.getElementById(`slide-${currentSlide}`).classList.remove('active');
+      currentSlide = num;
+      document.getElementById(`slide-${currentSlide}`).classList.add('active');
+
+      // Update Header
+      const meta = SLIDE_META[currentSlide - 1];
+      document.getElementById('headerTitle').textContent = meta.title;
+      document.getElementById('headerSub').textContent = meta.sub;
+      document.getElementById('slideCounter').textContent = `SLIDE ${currentSlide} / ${TOTAL_SLIDES}`;
+
+      // Update Bottom Navigation State
+      document.getElementById('btnBack').disabled = (currentSlide === 1);
+      document.getElementById('btnNext').disabled = (currentSlide === TOTAL_SLIDES);
+
+      const resetBtn = document.getElementById('btnResetTiles');
+      resetBtn.disabled = !meta.hasFlip;
+
+      // Update Dots
+      document.querySelectorAll('.slide-dot').forEach((d, idx) => {
+        d.classList.toggle('active', idx + 1 === currentSlide);
+      });
+
+      SoundFX.click();
+    }
+
+    function restartEntireLesson() {
+      resetAllFlipTiles(false);
+      resetWmGame();
+      initMatchGame();
+      resetCommandChallenge();
+      resetQuiz();
+      goToSlide(1);
+    }
+
+    /* =========================================================================
+       10. INITIALIZATION & EVENT BINDING
+       ========================================================================= */
+    window.addEventListener('DOMContentLoaded', () => {
+      try {
+        // Render Slides 1-8
+        renderWelcome();
+        [2, 3, 4, 5, 6, 7].forEach(renderFlipSlide);
+        renderCommandCards();
+
+        // Initialize Activities (Slides 9-12)
+        renderWmRound();
+        initMatchGame();
+        renderCommandChallenge();
+        renderQuiz();
+
+        // Build Slide Progress Dots
+        buildDotNav();
+
+        // Navigation Buttons
+        document.getElementById('startLessonBtn').addEventListener('click', () => goToSlide(2));
+        document.getElementById('btnHome').addEventListener('click', () => goToSlide(1));
+        document.getElementById('btnBack').addEventListener('click', () => goToSlide(currentSlide - 1));
+        document.getElementById('btnNext').addEventListener('click', () => goToSlide(currentSlide + 1));
+        document.getElementById('btnResetTiles').addEventListener('click', () => resetAllFlipTiles(true));
+        document.getElementById('restartLessonBtn').addEventListener('click', restartEntireLesson);
+
+        // Sound Toggle
+        document.getElementById('soundToggle').addEventListener('click', (e) => {
+          const on = SoundFX.toggle();
+          e.currentTarget.textContent = on ? '🔊' : '🔇';
+        });
+
+        // Slide 9 Controls
+        document.getElementById('wmStartTimerBtn').addEventListener('click', startWmTimer);
+        document.getElementById('wmHideBtn').addEventListener('click', hideOneAppliance);
+        document.getElementById('wmNextRoundBtn').addEventListener('click', () => {
+          wmState.roundIdx++;
+          renderWmRound();
+          SoundFX.click();
+        });
+        document.getElementById('wmResetBtn').addEventListener('click', () => {
+          SoundFX.click();
+          resetWmGame();
+        });
+
+        // Slide 10 Controls
+        document.getElementById('matchResetBtn').addEventListener('click', () => {
+          SoundFX.click();
+          initMatchGame();
+        });
+
+        // Slide 11 Controls
+        document.getElementById('ccNextBtn').addEventListener('click', () => {
+          SoundFX.click();
+          ccState.idx++;
+          renderCommandChallenge();
+        });
+        document.getElementById('ccResetBtn').addEventListener('click', () => {
+          SoundFX.click();
+          resetCommandChallenge();
+        });
+
+        // Slide 12 Controls
+        document.getElementById('quizRetakeTopBtn').addEventListener('click', resetQuiz);
+
+        // Teacher Clicker / Keyboard Arrow Support (Manual Navigation Only)
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowRight' && currentSlide < TOTAL_SLIDES) goToSlide(currentSlide + 1);
+          if (e.key === 'ArrowLeft' && currentSlide > 1) goToSlide(currentSlide - 1);
+        });
+
+        // Initial nav state for Slide 1
+        document.getElementById('btnBack').disabled = true;
+        document.getElementById('btnResetTiles').disabled = true;
+      } catch (err) {
+        console.error('Initialization error:', err);
+      }
+    });
+  </script>
+</body>
+</html>
